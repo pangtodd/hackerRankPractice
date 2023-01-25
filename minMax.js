@@ -16,3 +16,11 @@ function miniMaxSum(arr) {
   const maxSum= sortedArray.reduce((currentSum, a)=>currentSum+a) - arr[0];
   console.log(minSum + " " + maxSum);
 }
+
+// alternate solution: also sorted and used reduce, but used slice to remove the first or last part of the array.
+// function miniMaxSum(arr) {
+//   const sortedArray = arr.sort();
+//   const sumMin = sortedArray.slice(0,4).reduce((a,b) => a + b, 0)
+//   const sumMax = sortedArray.slice(1,5).reduce((a,b) => a + b, 0)
+//   console.log(`${sumMin} ${sumMax}`)
+// }
