@@ -25,3 +25,20 @@ function timeConversion(s) {
   }
   return time;
 }
+
+// better solution- makes cleaner use of splitting, since minutes and seconds will not change. 
+// Also like how they treated PM as a modifier- cleaner how they just add 12 to all PMs:
+// const time = s.slice(0,-2);
+// const modifier = s.slice(-2);
+
+// let [hours, minutes, seconds] = time.split(':');
+
+// if (hours == '12') {
+//     hours = '00';
+// }
+
+// if (modifier === 'PM') {
+//     hours = parseInt(hours, 10) + 12;
+// }
+
+// return `${hours}:${minutes}:${seconds}`;
