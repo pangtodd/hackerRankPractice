@@ -37,3 +37,23 @@ function breakingRecords(scores) {
   return records;
 }
 
+
+// alternate solution (should have pushed in one line otherwise the same):
+// function breakingRecords(scores) {
+//   let size = scores.length;
+//   let min=scores[0], max=scores[0];
+//   let countMin = 0, countMax = 0;
+//   let arr = [];
+//   for (let i=0; i<size; i++) {
+//       if(scores[i]>max){
+//           max = scores[i];
+//           countMax++;
+//       }
+//       if(scores[i]<min){
+//           min = scores[i];
+//           countMin++;
+//       }
+//   }
+//   arr.push(countMax, countMin);
+//   return arr;
+// }
