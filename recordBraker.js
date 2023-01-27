@@ -16,3 +16,24 @@
 
 // the output for this example should be [1, 1] (position 0 = # of times broke high score, position 1 = # of times broke low score)
 
+function breakingRecords(scores) {
+  let minTally = 0;
+  let minScore = scores[0];
+  let maxTally = 0;
+  let maxScore= scores[0];
+  scores.forEach(element=>{
+      if (element > maxScore){
+          maxScore=element;
+          maxTally ++;
+      };
+      if (element < minScore){
+          minScore= element;
+          minTally++;
+      }
+  })
+  let records =[];
+  records.push(maxTally);
+  records.push(minTally);
+  return records;
+}
+
