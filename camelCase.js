@@ -14,24 +14,39 @@
 // Output Format
 
 // For each input line, your program should print either the space-delimited list of words (in the case of a split operation) or the appropriate camel case string (in the case of a combine operation).
+
 function processData(input) {
-  const actualTxt= input.slice(4,);
-  const strArray= actualTxt.split('');
-  let answer = "";
-  
-  if (input[0]==="S"){
-      strArray.forEach(element=>{
-      if(element.match(/[A-Z]/)){
-          answer = answer +" "+ element.toLowerCase();
-      } else {
-          answer=answer + element;
-      };
-  })
-   answer = answer.replace("()","");
-  }
-  
-  if (input[0]==="C"&& input[3] === "M"){
+  const arrayOfInputs=input.split(/\r?\n|\r|\n/g);
+  arrayOfInputs.forEach(e=>{
+      let strArray= e.slice(4,).split('');
       
-  }
+      if (e[0]==="S"){
+          let splitAnswer = "";
+          strArray.forEach(i=>{
+          if(i.match(/[A-Z]/)){
+              splitAnswer = splitAnswer +" "+ i.toLowerCase();
+          } else {
+              splitAnswer=splitAnswer + i;
+          };
+      })
+      splitAnswer = splitAnswer.replace("()","").trim();
+      console.log(splitAnswer)
+      }
+      
+      if (e[0]==="C"&& e[2] === "M"){
+          let combAnswer= ""
+          for (j= 0; j< strArray.length; j++) {
+              if(strArray[j].match(" ")){
+                  strArray[j+1].toUpperCase();
+              } else {
+                  combAnswer = combAnswer + strArray[j];
+              }
+          }
+          combAnswer = combAnswer+"()";
+          console.log(combAnswer)
+      };
+      
+  });
+}
   
-  console.log(input);
+  
