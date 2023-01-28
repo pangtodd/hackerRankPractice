@@ -34,19 +34,16 @@ function processData(input) {
       }
       
       if (e[0]==="C"&& e[2] === "M"){
-          let combAnswer= ""
-          for (j= 0; j< strArray.length; j++) {
-              if(strArray[j].match(" ")){
-                  strArray[j+1].toUpperCase();
-              } else {
-                  combAnswer = combAnswer + strArray[j];
-              }
-          }
-          combAnswer = combAnswer+"()";
-          console.log(combAnswer)
+          sliceAnswer= e.slice(4,);
+          answerArray= sliceAnswer.split(" ");
+          cmAnswer = ""
+          answerArray.forEach(j=>{
+              cmAnswer= cmAnswer + j[0].toUpperCase()+ j.slice(1,);
+          });
+          comboAnswer= answerArray.join("");
+          console.log(cmAnswer[0].toLowerCase()+ cmAnswer.slice(1,)+"()")
+
       };
       
   });
 }
-  
-  
