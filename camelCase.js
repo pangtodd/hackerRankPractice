@@ -31,7 +31,7 @@ function processData(input) {
       })
       splitAnswer = splitAnswer.replace("()","").trim();
       console.log(splitAnswer)
-      }
+      };
       
       if (e[0]==="C"&& e[2] === "M"){
           sliceAnswer= e.slice(4,);
@@ -42,8 +42,27 @@ function processData(input) {
           });
           comboAnswer= answerArray.join("");
           console.log(cmAnswer[0].toLowerCase()+ cmAnswer.slice(1,)+"()")
-
       };
       
+      if (e[0]==="C"&& e[2] === "C"){
+          sliceAnswer= e.slice(4,);
+          answerArray= sliceAnswer.split(" ");
+          ccAnswer = ""
+          answerArray.forEach(j=>{
+              ccAnswer= ccAnswer + j[0].toUpperCase()+ j.slice(1,);
+          });
+          console.log(ccAnswer)
+      };
+      
+       if (e[0]==="C"&& e[2] === "V"){
+          sliceAnswer= e.slice(4,);
+          answerArray= sliceAnswer.split(" ");
+          cmAnswer = ""
+          answerArray.forEach(j=>{
+              cmAnswer= cmAnswer + j[0].toUpperCase()+ j.slice(1,);
+          });
+          comboAnswer= answerArray.join("");
+          console.log(cmAnswer[0].toLowerCase()+ cmAnswer.slice(1,));
+      };     
   });
 }
