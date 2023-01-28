@@ -14,3 +14,24 @@
 // Output Format
 
 // For each input line, your program should print either the space-delimited list of words (in the case of a split operation) or the appropriate camel case string (in the case of a combine operation).
+function processData(input) {
+  const actualTxt= input.slice(4,);
+  const strArray= actualTxt.split('');
+  let answer = "";
+  
+  if (input[0]==="S"){
+      strArray.forEach(element=>{
+      if(element.match(/[A-Z]/)){
+          answer = answer +" "+ element.toLowerCase();
+      } else {
+          answer=answer + element;
+      };
+  })
+   answer = answer.replace("()","");
+  }
+  
+  if (input[0]==="C"&& input[3] === "M"){
+      
+  }
+  
+  console.log(input);
