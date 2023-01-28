@@ -18,51 +18,93 @@
 function processData(input) {
   const arrayOfInputs=input.split(/\r?\n|\r|\n/g);
   arrayOfInputs.forEach(e=>{
-      let strArray= e.slice(4,).split('');
-      
+      let strArray= e.slice(4,).split(''); 
+      // I divided this problem into two halves- solving for "splitting" and then dealing with "combine". 
+      // started with splitting.
       if (e[0]==="S"){
           let splitAnswer = "";
           strArray.forEach(i=>{
-          if(i.match(/[A-Z]/)){
-              splitAnswer = splitAnswer +" "+ i.toLowerCase();
+            if(i.match(/[A-Z]/)){
+                splitAnswer = splitAnswer +" "+ i.toLowerCase();
+            } else {
+                splitAnswer=splitAnswer + i;
+            };
+          })
+          splitAnswer = splitAnswer.replace("()","").trim();
+          console.log(splitAnswer)
           } else {
-              splitAnswer=splitAnswer + i;
-          };
-      })
-      splitAnswer = splitAnswer.replace("()","").trim();
-      console.log(splitAnswer)
-      };
-      
-      if (e[0]==="C"&& e[2] === "M"){
-          sliceAnswer= e.slice(4,);
-          answerArray= sliceAnswer.split(" ");
-          cmAnswer = ""
-          answerArray.forEach(j=>{
-              cmAnswer= cmAnswer + j[0].toUpperCase()+ j.slice(1,);
-          });
-          comboAnswer= answerArray.join("");
-          console.log(cmAnswer[0].toLowerCase()+ cmAnswer.slice(1,)+"()")
-      };
-      
-      if (e[0]==="C"&& e[2] === "C"){
-          sliceAnswer= e.slice(4,);
-          answerArray= sliceAnswer.split(" ");
-          ccAnswer = ""
-          answerArray.forEach(j=>{
-              ccAnswer= ccAnswer + j[0].toUpperCase()+ j.slice(1,);
-          });
-          console.log(ccAnswer)
-      };
-      
-       if (e[0]==="C"&& e[2] === "V"){
-          sliceAnswer= e.slice(4,);
-          answerArray= sliceAnswer.split(" ");
-          cmAnswer = ""
-          answerArray.forEach(j=>{
-              cmAnswer= cmAnswer + j[0].toUpperCase()+ j.slice(1,);
-          });
-          comboAnswer= answerArray.join("");
-          console.log(cmAnswer[0].toLowerCase()+ cmAnswer.slice(1,));
-      };     
+            //this handles the core part of the combine cases.
+            //different than how I handled the split section- this splits it into words, not individual characters.
+            let answerArray = e.slice(4,).split(" ");
+            let comboAnswer = "";
+            answerArray.forEach(j=>{
+              comboAnswer= comboAnswer + j[0].toUpperCase() + j.slice(1,);
+            });
+                // once the core answer was established, adjusted it with these nested conditionals.
+                if(e[2]==="M"){
+                    console.log(comboAnswer[0].toLowerCase()+ comboAnswer.slice(1,)+ "()");
+                } else if (e[2] === "C"){
+                    console.log(comboAnswer)  
+                } else {
+                    console.log(comboAnswer[0].toLowerCase()+ comboAnswer.slice(1,))
+                }
+          }    
   });
-}
+};
+
+// alternate solution: (although I like mine better)
+// function processData(input) {
+//   //Enter your code here
+//   let spiltSemi = input.split("\r\n");
+//   spiltSemi.forEach((res) => {
+//       let value = res.split(";");
+//       let data = value[2]        
+//       if(value[0] == "S"){
+//           if(value[1] === "M") {
+//               let str = "";   
+//               for(let i=0; i<data.length; i++){
+//                   if((data[i] === data[i].toUpperCase()) && !["(", ")"].includes(data[i])) 
+//                       str += " " + data[i].toLowerCase()
+//                   else if(!["(", ")"].includes(data[i]))
+//                       str += data[i];
+//               }
+//               console.log(str);
+//           } else if(["C", "V"].includes(value[1])) {
+//               let str = "";
+//               for(let i=0; i<data.length; i++){
+//                   if(data[i] === data[i].toUpperCase()){
+//                       str += " " + data[i].toLowerCase();
+//                   } else {
+//                       str += data[i];
+//                   }
+//               }
+//               console.log(str.trimStart());
+//           }
+//       }
+//       else if(value[0] == "C") {
+//           if(["M","V"].includes(value[1])) {
+//               let str = "";
+//               for(let i=0; i<data.length; i++){
+//                   if(data[i-1] === " "){
+//                       str += data[i].toUpperCase();
+//                   }
+//                   else if(data[i] !== " ") {
+//                       str += data[i];
+//                   }
+//               }
+//               console.log(value[1] == "M"? str+"()": str);
+//           } else if(["C"].includes(value[1])) {
+//               let str = data[0].toUpperCase();
+//               for(let i=1; i<data.length; i++){
+//                   if(data[i - 1] === " "){
+//                       str += data[i].toUpperCase();
+//                   } else if(data[i] !== " ") {
+//                       str += data[i];
+//                   }
+//               }
+//               console.log(str.trimStart());
+//           } 
+//       }
+//   });
+// }
+
