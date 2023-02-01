@@ -7,17 +7,17 @@ Given an array of integers and a positive integer K, determine the number of (i,
 
 // Three pairs meet the criteria:  [1, 4] [2, 3] and [4, 6]. all create sums divisible by 5, and 1st position is < 2nd position in the array.
 
+
 function divisibleSumPairs(n, k, ar) {
-  // Write your code here
-  let answer = [];
-  ar.forEach((i) => {
-    ar.forEach((j) => {
-      let success = [];
-      if ((i + j) % k === 0 && i < j) {
-        success.push(i, j);
-        answer.push(success);
+  let count = [];
+  for (let i = 0; i < ar.length; i++) {
+    for (let j = i ; j < ar.length; j++) {
+      if ((ar[i] + ar[j]) % k === 0  && i<j ) {
+        count.push([ar[i], ar[j]]);
       }
-    });
-  });
-  return answer.length;
+    }
+  }
+
+  return count.length;
 }
+  
