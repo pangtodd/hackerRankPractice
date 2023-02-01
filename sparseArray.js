@@ -22,3 +22,10 @@ function matchingStrings(strings, queries) {
   }
   return answer;
 }
+
+// alternate solution:
+// function matchingStrings(strings, queries) {
+//   return queries.map(q => {
+//       return strings.filter(s => s == q).length
+//   })
+// }
