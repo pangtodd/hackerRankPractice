@@ -4,3 +4,8 @@
 // arr= [5, 3, 1, 2, 4]
 // The sorted array = [1,2,3,4,5]. The middle element and the median is 3 .
 
+function Median(n){
+  let sortedArr=arr.sort();
+  let position = Math.floor(arr.length/2);
+  return sortedArr[position]
+}
