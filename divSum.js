@@ -9,15 +9,15 @@ Given an array of integers and a positive integer K, determine the number of (i,
 
 function divisibleSumPairs(n, k, ar) {
   // Write your code here
-  let answer= [];
-  ar.forEach(i=>{
-      ar.forEach(j=>{
-          let success= [];
-          if ((i + ar[j]) % k === 0 && i < ar[j]){
-              success.push(i, ar[j]);
-              answer.push(success);
-          }
-      });
+  let answer = [];
+  ar.forEach((i) => {
+    ar.forEach((j) => {
+      let success = [];
+      if ((i + j) % k === 0 && i < j) {
+        success.push(i, j);
+        answer.push(success);
+      }
+    });
   });
   return answer.length;
 }
