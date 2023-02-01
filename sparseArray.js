@@ -7,3 +7,18 @@
 
 
 // There are 2 instances of 'ab', 1 of 'abc' and 0 of 'bc'. For each query, add an element to the return array, results = [2, 1, 0].
+
+function matchingStrings(strings, queries) {
+  let answer= [];
+  let score = 0;
+  for (let i = 0; i<queries.length; i++) {
+      score = 0;
+      for (let j = 0; j<strings.length; j++) {
+          if (queries[i] === strings[j]){
+              score++;
+          }
+     }
+      answer.push(score);
+  }
+  return answer;
+}
