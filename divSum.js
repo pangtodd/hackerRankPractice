@@ -21,3 +21,19 @@ function divisibleSumPairs(n, k, ar) {
   return count.length;
 }
   
+// alternate solution:
+// function divisibleSumPairs(n: number, k: number, ar: number[]): number {
+//   // Write your code here
+//   const arSize = n;
+//   let sum = 0;
+      
+//   for (let i = 0; i < arSize; i++) {
+//       for (let j = i + 1; j < arSize; j++) {                
+//           if ((ar[i] + ar[j]) % k === 0) {
+//               sum++;
+//           }
+//       }
+//   }
+      
+//   return sum;
+// }
