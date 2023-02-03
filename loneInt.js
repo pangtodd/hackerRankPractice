@@ -14,3 +14,20 @@ function lonelyinteger(a) {
   }
   return a[answer];
 }
+
+// alt solution:
+// function lonelyinteger(a) {
+//   let integersMap = new Map()
+//   a.map((item) => {
+//       const currentElement = integersMap.get(item);
+//       if(!currentElement) integersMap.set(item, 1)
+//       if(currentElement) integersMap.set(item, currentElement + 1)
+//   })
+  
+//   let lonelyInteger = null
+//   for(let [integerKey, integerOccurences] of integersMap.entries()) {
+//       if(integerOccurences === 1) lonelyinteger = integerKey
+//   }
+  
+//   return lonelyinteger
+// }
