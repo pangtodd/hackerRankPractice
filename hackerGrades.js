@@ -15,3 +15,29 @@
 // grade = 57; do not round (60 - 57 is 3 or higher)
 
 // Given the initial value of grade for each of Sam's n students, write code to automate the rounding process.
+
+
+function gradingStudents(grades) {
+  let roundedGrades = [];
+  for (let i=0;i<grades.length; i++){
+      let remainder= grades[i]%5;
+      if (grades[i] < 38 ){
+          roundedGrades.push(grades[i]);
+      } else if (remainder < 3) {
+          roundedGrades.push(grades[i])
+      } else {
+          roundedGrades.push(grades[i]+(5-remainder))
+      }
+  }
+  return roundedGrades
+}
+
+// alternate solution:
+// function gradingStudents(grades) {
+//   return grades.map((item) => {
+//       if(item >= 38 && item % 5 >= 3) {
+//           return item + (5 - item % 5);
+//       }
+//       return item
+//   })
+// }
