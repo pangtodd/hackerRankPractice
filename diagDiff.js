@@ -9,3 +9,14 @@
 // The left-to-right diagonal = 1 + 5 + 9. total is 15
 // The right to left diagonal = 3 + 5_ 9. Total is 17
 // Their absolute difference is 2 .
+
+function diagonalDifference(arr) {
+  let startLeftScore=0;
+  let startRightScore=0;
+  for(let i = 0; i < arr.length; i++){
+      startLeftScore = startLeftScore + arr[i][i];
+      startRightScore = startRightScore + arr[i].reverse()[i];  
+  }
+  return Math.abs(startLeftScore - startRightScore )
+} 
+
