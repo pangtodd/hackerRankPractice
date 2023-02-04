@@ -14,3 +14,6 @@ function flippingBits(n) {
   let answer= parseInt((oneToZero.replaceAll("Z", "1")),2);
   return answer;
 }
+
+//alternate solution:
+//return (~n>>>0)
