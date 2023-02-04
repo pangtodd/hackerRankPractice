@@ -6,3 +6,11 @@
 //  9 We're working with 32 bits, so:
 // 00000000000000000000000000000001 = 1
 // 11111111111111111111111111111110 = 4294967294
+
+function flippingBits(n) {
+  let binaryString = n.toString(2).padStart(32, "0")
+  let zeroToPlaceholder= binaryString.replaceAll("0", "Z");
+  let oneToZero= zeroToPlaceholder.replaceAll("1", "0")
+  let answer= parseInt((oneToZero.replaceAll("Z", "1")),2);
+  return answer;
+}
