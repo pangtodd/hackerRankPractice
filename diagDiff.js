@@ -20,3 +20,11 @@ function diagonalDifference(arr) {
   return Math.abs(startLeftScore - startRightScore )
 } 
 
+// alt solution:
+// let pSum = 0;
+// let sSum = 0;
+// arr.forEach((item, i) => {
+//     pSum += item[i];
+//     sSum += item[(item.length - i - 1)]
+// });
+// return Math.abs(pSum - sSum);
