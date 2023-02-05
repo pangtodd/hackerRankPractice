@@ -35,4 +35,10 @@
 
 // int[100]: a frequency array
 
-
+function countingSort(arr) {
+  let answerArr = new Array(100); for (let i=0; i<100; ++i) answerArr[i] = 0;
+  for (let j = 0; j < arr.length; ++j){
+      answerArr[arr[j]]=answerArr[arr[j]]+1
+  }
+  return answerArr;
+}
