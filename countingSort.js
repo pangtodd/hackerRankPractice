@@ -42,3 +42,14 @@ function countingSort(arr) {
   }
   return answerArr;
 }
+
+// alt solution:
+
+// function countingSort(arr) {
+// const freq = new Array(100).fill(0);
+// for(var i=0;i<arr.length;i++)
+// {
+//     freq[arr[i]] +=1;
+// } 
+// return freq;
+// }
