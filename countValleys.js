@@ -23,3 +23,16 @@ function countingValleys(steps, path) {
   }
   return answer;
 }
+
+// alt solution:
+// let counter = 0
+// let last_step = 0
+// let actual = 0
+// for(let i = 0; i < steps; i++){
+//     actual += "D" == path[i] ? -1 : +1
+//     if(actual < 0 && last_step == 0 ){
+//         counter++
+//     }
+//     last_step = actual
+// }
+// return counter
