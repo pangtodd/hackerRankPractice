@@ -5,3 +5,21 @@
 // A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
 
 // Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+
+function countingValleys(steps, path) {
+  // Write your code here
+  let height = 0;
+  let answer = 0;
+  for(let i = 0; i<steps; i++){
+      console.log(height, path[i-1], answer);
+      if (path[i]==="D"){
+          height--;
+      } else {
+          height++;
+      };
+      if (height === 0 && path[i] === "U"){
+          answer++;
+      };    
+  }
+  return answer;
+}
