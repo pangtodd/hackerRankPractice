@@ -22,3 +22,12 @@ function marsExploration(s) {
   }
   return score;
 }
+
+// alt solution:
+// function marsExploration(s, msg="SOS") {
+//   let count = 0;
+//   for(let i=0; i<s.length; i++) 
+//       if(s[i] !== msg[i%3]) count++;
+  
+//   return count;
+// }
