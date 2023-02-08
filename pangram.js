@@ -10,9 +10,17 @@ function pangrams(s) {
           score++;
       }
   }
-  if (score>0){
-      return "not pangram"
-  } else {
-      return "pangram"
-  }
+  score>0 ? x = "not pangram": x= "pangram";
+  return 
 }
+
+// alt solution:
+// function pangrams(s) {
+//   if (s.length < 26) {
+//     return "not pangram";
+//   }
+
+//   const stringArr = s.toLowerCase().replace(/\s/g, "").split("");
+//   let set = new Set(stringArr);
+//   return set.size === 26 ? "pangram" : "not pangram";
+// }
