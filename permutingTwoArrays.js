@@ -36,3 +36,27 @@ function twoArrays(k, A, B) {
   }
 
 }
+
+// alternate solution:
+// function twoArrays(k, A, B) {
+//   // Write your code here
+//   const a = A.sort((a,b)=> (a-b));
+//   const b = B.sort((a,b) => (b-a));
+//   var flag ;
+//   for(var i=0;i<a.length;i++)
+//   {
+//     if(k<=a[i]+b[i])
+//     {
+//         flag = 'YES';
+//     }
+//     else{
+//         flag ='NO'
+//     }
+//     if(flag==='NO')
+//     {
+//         break;
+//     }
+//   }
+  
+//   return flag;
+// }
