@@ -18,9 +18,8 @@
 function birthday(s, d, m) {
   let score = 0;
   for(let i = 0; i<s.length; i++){
-      let segment = s.slice(i, i+m)
-      let segSum= segment.reduce((total, current) => { return total + current;
-  }, 0);
+      let segment = s.slice(i, i + m)
+      let segSum= segment.reduce((t, c) => { return t + c;}, 0);
       if (segment.length === m && segSum === d) {
           score+=1;
       }

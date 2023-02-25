@@ -11,7 +11,6 @@ function countingValleys(steps, path) {
   let height = 0;
   let answer = 0;
   for(let i = 0; i<steps; i++){
-      console.log(height, path[i-1], answer);
       if (path[i]==="D"){
           height--;
       } else {
