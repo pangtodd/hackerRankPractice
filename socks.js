@@ -21,3 +21,15 @@ function sockMerchant(n, ar) {
   return pairs;
 }
 
+// alternate solution:
+// function sockMerchant(_, socks) {
+//   const map = new Map();
+//   let count = 0;
+//   for (let sock of socks) {
+//       map.set(sock, map.get(sock) + 1 || 1)
+//       if(map.get(sock) % 2 == 0) {
+//           count++
+//       }
+//   }
+//   return count
+// }
