@@ -33,3 +33,17 @@ function migratoryBirds(arr) {
   return winner;
   
 }
+
+// function migratoryBirds(arr) {
+//   const frequencies = {}
+//   let max = {id: -1, value: -1}
+  
+//   for(let id of arr){
+//       frequencies[id] = (frequencies[id] || 0) + 1;                
+//       const value = frequencies[id];
+//       if(value > max.value) max = {id, value};
+//       else if(value == max.value) max.id = Math.min(max.id, id);
+//   }
+  
+//   return max.id
+// }
