@@ -3,3 +3,18 @@
 // When they flip page 1, they see pages 2 and 3. Each page except the last page will always be printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is  pages long, and a student wants to turn to page p, what is the minimum number of pages to turn? They can start at the beginning or the end of the book.
 
 // Given n and p, find and print the minimum number of pages that must be turned in order to arrive at page p.
+
+function pageCount(n, p) {
+  // Write your code here
+  if(p === 1){
+      return 0;
+  }
+  else if (n-p === 1 && n%2 === 0){
+      return 1;
+  }
+  else if (n-p< p){
+      return Math.floor((n-p)/2)
+  } else {
+    return Math.floor(p/2)
+  };
+}
