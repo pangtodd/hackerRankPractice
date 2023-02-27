@@ -11,3 +11,19 @@
 // sticks = [1,2,3,4,5,10]
 
 // The triplet (1,2,3)  will not form a triangle. Neither will (4,5,6) or (2,3,5) so the problem is reduced to (2,3,4) and (3,4,5) . The longer perimeter is (3,4,5).
+
+function maximumPerimeterTriangle(sticks) {
+  let winningArray =[-1];
+  let sSticks = sticks.sort(function(a, b) {return a - b;})
+  while (sSticks.length>2){
+      console.log("sSticks: "+ sticks)
+      console.log("winning: "+ winningArray)
+      if (sSticks[0]+sSticks[1]<=sSticks[2] || sSticks[1]+sSticks[2] <=sSticks[0] || sSticks[2]+sSticks[0]<=sSticks[1]) {
+         sSticks.splice(0,1);
+      } else {
+          winningArray=[sSticks[0], sSticks[1], sSticks[2]];
+          sSticks.splice(0,1);
+      }
+  };       
+  return winningArray;
+};
