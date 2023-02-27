@@ -14,16 +14,29 @@
 
 function maximumPerimeterTriangle(sticks) {
   let winningArray =[-1];
-  let sSticks = sticks.sort(function(a, b) {return a - b;})
-  while (sSticks.length>2){
-      console.log("sSticks: "+ sticks)
-      console.log("winning: "+ winningArray)
-      if (sSticks[0]+sSticks[1]<=sSticks[2] || sSticks[1]+sSticks[2] <=sSticks[0] || sSticks[2]+sSticks[0]<=sSticks[1]) {
-         sSticks.splice(0,1);
+  let sortSticks = sticks.sort(function(a, b) {return a - b;})
+  while (sortSticks.length>2){
+      if (sortSticks[0]+sortSticks[1]<=sortSticks[2] || sortSticks[1]+sortSticks[2] <=sortSticks[0] || sortSticks[2]+sortSticks[0]<=sortSticks[1]) {
+        sortSticks.splice(0,1);
       } else {
-          winningArray=[sSticks[0], sSticks[1], sSticks[2]];
-          sSticks.splice(0,1);
+          winningArray=[sortSticks[0], sortSticks[1], sortSticks[2]];
+          sortSticks.splice(0,1);
       }
   };       
   return winningArray;
 };
+
+// alt solution:
+// function maximumPerimeterTriangle(sticks) {
+//   sticks.sort((a,b) => a-b)
+  
+//   for (let idx = sticks.length; idx > 2; idx--) {
+//       const triangle = sticks.slice(idx - 3, idx);
+//       const [A,B,C] = triangle
+//       const isNonDegenerate = A+B>C;
+//       if(isNonDegenerate) {
+//           return triangle
+//       }
+//   }
+//   return [-1]
+// }
