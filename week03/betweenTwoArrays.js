@@ -17,36 +17,51 @@
 function getTotalX(a, b) {
   let range = [];
   let aFactors = [];
-  let answers = []
+  let answers = [];
+  let counts = {};
+  let score = 0;
+  
   for (let i = a[a.length - 1]; i <= b[0]; i++) {
-    if (i % a[0] === 0) {
       range.push(i);
-    }
   };
-  console.log(range);
+  console.log("range: "+range);
   for (let j = 0; j < range.length; j++) {
-    for (let k = 1; k < a.length; k++) {
+    for (let k = 0; k < a.length; k++) {
+    console.log("range Value" +range[j]);
+    console.log("comp value"+ a[k])
       if (range[j] % a[k] === 0) {
         aFactors.push(range[j]);
       }
     }
   }
-  console.log("afoctors" + aFactors)
+  console.log("a factors: " + aFactors)
+  
+  const abFactors= [...new Set(aFactors)]
 
   for (let l = 0; l < b.length; l++) {
-    for (let m = 0; m < aFactors.length; m++) {
-      console.log("b:"+ b[l] +  " aFact:"+ aFactors[m])
-      if (b[l] % aFactors[m] === 0) {
-        answers.push(aFactors[m]);
+    for (let m = 0; m < abFactors.length; m++) {
+      if (b[l] % abFactors[m] === 0) {
+       answers.push(abFactors[m]);
       }
     }
   }
-  console.log(answers)
-  const finalAnswer = [...new Set(answers)];
-  console.log("answer" + finalAnswer)
 
-  return finalAnswer.length;
+	console.log("filtered answers" + answers);
+  for (const num of answers) {
+    counts[num] = counts[num] ? counts[num] + 1 : 1;
+  };
+
+/*   console.log(counts)
+   */  for (let n = 0; n <= b[0]; n++) {
+/*     console.log(counts[n])
+     */    if (counts[n] === b.length){
+      score = score +1
+    }
+  }
+  console.log("score_" + score)
+  
 }
+
 
 const input = {
   aOne: [2, 6],
@@ -55,10 +70,10 @@ const input = {
   bTwo: [16, 32, 96],
   aThree: [2],
   bThree: [20, 30, 12],
-  afour: [3, 9, 6],
+  aFour: [3, 9, 6],
   bFour: [36, 72],
   aFive: [1],
-  bfive: [100],
+  bFive: [100],
   aSix: [2, 3, 6],
   bSix: [42, 84],
   aSeven: [1],
@@ -66,3 +81,5 @@ const input = {
   aEight: [3, 4],
   bEight: [24, 48],
 };
+
+getTotalX(input.aFive, input.bFive);
