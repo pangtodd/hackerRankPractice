@@ -14,11 +14,10 @@
 // 12%2 = 0, 12%6=0, and 24%12 = 0, 36%12=0 for the second value.
 // return 2.
 
-
 function getTotalX(a, b) {
   let range = [];
   let aFactors = [];
-  let answers= []
+  let answers = []
   for (let i = a[a.length - 1]; i <= b[0]; i++) {
     if (i % a[0] === 0) {
       range.push(i);
@@ -32,18 +31,38 @@ function getTotalX(a, b) {
       }
     }
   }
-  console.log(aFactors)
+  console.log("afoctors" + aFactors)
 
-  for (let l = aFactors.length; l >0; l--){
-     for (let m = b.length; m> 0; m--){
-       if (b[m]%aFactors[l]===0){
-         answers.push(aFactors[l]);
-       }
-     }
-   }
-   
-   const finalAnswer= [...new Set(answers)];
-   console.log("answer"+ finalAnswer)
+  for (let l = 0; l < b.length; l++) {
+    for (let m = 0; m < aFactors.length; m++) {
+      console.log("b:"+ b[l] +  " aFact:"+ aFactors[m])
+      if (b[l] % aFactors[m] === 0) {
+        answers.push(aFactors[m]);
+      }
+    }
+  }
+  console.log(answers)
+  const finalAnswer = [...new Set(answers)];
+  console.log("answer" + finalAnswer)
 
-   return finalAnswer.length;
+  return finalAnswer.length;
 }
+
+const input = {
+  aOne: [2, 6],
+  bOne: [24, 36],
+  aTwo: [2, 4],
+  bTwo: [16, 32, 96],
+  aThree: [2],
+  bThree: [20, 30, 12],
+  afour: [3, 9, 6],
+  bFour: [36, 72],
+  aFive: [1],
+  bfive: [100],
+  aSix: [2, 3, 6],
+  bSix: [42, 84],
+  aSeven: [1],
+  bSeven: [72, 48],
+  aEight: [3, 4],
+  bEight: [24, 48],
+};
