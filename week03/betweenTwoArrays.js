@@ -17,69 +17,58 @@
 function getTotalX(a, b) {
   let range = [];
   let aFactors = [];
+  let bFactors = {};
   let answers = [];
   let counts = {};
   let score = 0;
-  
+
   for (let i = a[a.length - 1]; i <= b[0]; i++) {
-      range.push(i);
+    range.push(i);
   };
-  console.log("range: "+range);
+  console.log("range: " + range)
   for (let j = 0; j < range.length; j++) {
     for (let k = 0; k < a.length; k++) {
-    console.log("range Value" +range[j]);
-    console.log("comp value"+ a[k])
       if (range[j] % a[k] === 0) {
-        aFactors.push(range[j]);
+        bFactors[range[j]] = bFactors[range[j]] ? bFactors[range[j]] + 1 : 1;
+        if (bFactors[range[j]] === a.length) {
+          aFactors.push(range[j]);
+        }
       }
     }
   }
-  console.log("a factors: " + aFactors)
-  
-  const abFactors= [...new Set(aFactors)]
-
   for (let l = 0; l < b.length; l++) {
-    for (let m = 0; m < abFactors.length; m++) {
-      if (b[l] % abFactors[m] === 0) {
-       answers.push(abFactors[m]);
+    for (let m = 0; m < aFactors.length; m++) {
+      if (b[l] % aFactors[m] === 0) {
+        counts[aFactors[m]] = counts[aFactors[m]] ? counts[aFactors[m]] + 1 : 1;
+        if (counts[aFactors[m]] === b.length) {
+          score = score + 1
+        }
       }
     }
   }
 
-	console.log("filtered answers" + answers);
-  for (const num of answers) {
-    counts[num] = counts[num] ? counts[num] + 1 : 1;
-  };
+  return score
 
-/*   console.log(counts)
-   */  for (let n = 0; n <= b[0]; n++) {
-/*     console.log(counts[n])
-     */    if (counts[n] === b.length){
-      score = score +1
-    }
-  }
-  console.log("score_" + score)
-  
 }
 
 
 const input = {
-  aOne: [2, 6],
-  bOne: [24, 36],
-  aTwo: [2, 4],
-  bTwo: [16, 32, 96],
-  aThree: [2],
-  bThree: [20, 30, 12],
-  aFour: [3, 9, 6],
-  bFour: [36, 72],
-  aFive: [1],
-  bFive: [100],
-  aSix: [2, 3, 6],
-  bSix: [42, 84],
-  aSeven: [1],
-  bSeven: [72, 48],
-  aEight: [3, 4],
-  bEight: [24, 48],
+  a1: [2, 6],
+  b1: [24, 36],
+  a2: [2, 4],
+  b2: [16, 32, 96],
+  a3: [2],
+  b3: [20, 30, 12],
+  a4: [3, 9, 6],
+  b4: [36, 72],
+  a5: [1],
+  b5: [100],
+  a6: [2, 3, 6],
+  b6: [42, 84],
+  a7: [1],
+  b7: [72, 48],
+  a8: [3, 4],
+  b8: [24, 48],
 };
 
-getTotalX(input.aFive, input.bFive);
+getTotalX(input.a8, input.b8);
