@@ -7,3 +7,6 @@
 
 // after 2 rotations, arr = [3,4,5,1,2]
 
+function rotateLeft(d, arr) {
+  return arr.slice(d,).concat(arr.slice (0,d));
+}
