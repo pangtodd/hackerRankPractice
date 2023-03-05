@@ -10,3 +10,12 @@
 function rotateLeft(d, arr) {
   return arr.slice(d,).concat(arr.slice (0,d));
 }
+
+// alt solution:
+// function rotateLeft(d, arr) {
+//   for (let i = d; i > 0;i--) {
+//       const firstEl = arr.shift()
+//       arr.push(firstEl)
+//   }
+//   return arr
+// }
