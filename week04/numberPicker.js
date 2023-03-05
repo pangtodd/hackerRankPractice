@@ -24,3 +24,18 @@ function pickingNumbers(a) {
   }
   return score
 }
+
+// alt solution:
+
+// const _arr = new Array(100).fill(0)
+// let max = 0 
+// for(let i = 0; i<a.length;i++){
+//     _arr[a[i]]++
+//     if(_arr[a[i]] + _arr[a[i]-1] > max){
+//         max = _arr[a[i]] + _arr[a[i]-1]
+//     }
+//     if(_arr[a[i]] + _arr[a[i]+1] > max){
+//         max = _arr[a[i]] + _arr[a[i]+1]
+//     }
+// }
+// return max
