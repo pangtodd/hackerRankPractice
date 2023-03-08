@@ -57,3 +57,13 @@ function kangaroo(x1, v1, x2, v2) {
   return answer;
   
 }
+
+// alternate solution:
+// function kangaroo(kangPos1, kangJump1, kangPos2, kangJump2) {
+//   for(let k1 = kangPos1, k2 = kangPos2, i= 0; i <= 10000; k1 += kangJump1, k2 += kangJump2, i++) {
+//       if((k1 == k2)) {
+//           return "YES"
+//       }
+//   }
+//   return "NO"
+// }
