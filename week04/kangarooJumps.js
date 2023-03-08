@@ -24,3 +24,36 @@
 // Returns
 
 // string: either YES or NO
+
+function kangaroo(x1, v1, x2, v2) {
+  let answer = "";
+  if ((x1>x2 && v1>=v2) || (x1<x2 && v1<=v2)){
+      answer="NO";
+  } else if (Math.abs(x1-x2)< Math.abs(v1-v2)){
+      answer ="NO";
+  } else if (x1<x2){
+      while (x1<x2){
+          x1= x1+v1;
+          x2= x2+v2;
+      }
+      if(x1 ===x2) {
+          answer= "YES"
+      } else{
+          answer="NO"
+      }
+  } else {
+      while (x2>x1){
+          x1= x1+v1;
+          x2= x2+v2;
+      }
+      if(x1 ===x2) {
+          answer= "YES"
+      } else{
+          answer="NO"
+      }
+    
+  }
+  
+  return answer;
+  
+}
