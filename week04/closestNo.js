@@ -8,6 +8,17 @@
 // Sorted, arr= [1,2,3,4,5]. Several pairs have the minimum difference of 1: [(1,2),(2,3), (3,4), (4,5)]. Return the array [1,2,2,3,3,4,4,5].
 
 function closestNumbers(arr) {
-  // Write your code here
-
+  const sorted = arr.sort((a, b) => (a - b));
+  let smallestGap = Math.abs(sorted[0] - sorted[1]);
+  let answer = [];
+  for(let i=0; i<sorted.length; i++){
+    let iGap = Math.abs(sorted[i]-sorted[i+1]);
+    if(iGap == smallestGap){
+      answer.push(sorted[i], sorted[i +1]);
+    } else if (iGap < smallestGap){
+      answer = [sorted[i], sorted[i +1]];
+      smallestGap = iGap;
+    }
+  }
+  return answer;
 }
