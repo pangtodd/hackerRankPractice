@@ -22,3 +22,19 @@ function closestNumbers(arr) {
   }
   return answer;
 }
+
+// alt solution:
+// function closestNumbers(arr) {
+//   const pairs = {}
+//   const sorted = arr.sort((a, b) => a - b)
+  
+//   for(let i = 0; i < sorted.length - 1; i++){
+//       let min = Math.abs(sorted[i] - sorted[i + 1])
+//       if(!pairs[min]){
+//           pairs[min] = []; 
+//       } 
+//       pairs[min].push(sorted[i], sorted[i + 1])
+//   }
+//   const minKey = Math.min(Number(...Object.keys(pairs)))
+//   return pairs[minKey]
+// }
