@@ -16,3 +16,18 @@ function minimumAbsoluteDifference(arr) {
   }
   return tiny;
 }
+
+// alt solution:
+
+// function minimumAbsoluteDifference(arr) {
+//     // Write your code here
+//     arr.sort((a,b) => a - b);
+//     let min = Number.POSITIVE_INFINITY;
+//     for(let i = 0; i < arr.length; i++) {
+//         let a = arr[i];
+//         let b = arr[i + 1];
+//         let rest = Math.abs(a - b);
+//         if(rest < min) min = rest;
+//     }
+//     return min;
+// }
