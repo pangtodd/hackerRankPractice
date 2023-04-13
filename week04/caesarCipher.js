@@ -3,18 +3,22 @@
 
 function caesarCipher(s, k) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  const key = alphabet.substring(k)+alphabet.slice(0,k)
-  const upperCaseKey= key.toUpperCase();
+  const upperAlpha = alphabet.toUpperCase();
+  let key = alphabet.substring(k)+alphabet.slice(0,k);
+  if(k>26){
+      key = alphabet.substring(k%26)+alphabet.slice(0,k%26)
+      } 
   let answer = "";
   for(let i=0; i<s.length; i++){
       let position = alphabet.indexOf(s[i].toLowerCase());
       if(key.includes(s[i])){
           answer = answer + key[position];          
-      }else if (upperCaseKey.includes(s[i])){
-          answer = answer + upperCaseKey[position];
+      }else if (upperAlpha.includes(s[i])){
+          answer = answer + key[position].toUpperCase();
       } else {
           answer = answer + s[i];
       }
   }
   return answer;
 }
+
