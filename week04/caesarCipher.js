@@ -22,3 +22,28 @@ function caesarCipher(s, k) {
   return answer;
 }
 
+// alt solution:
+// function caesarCipher(s, k) {
+//   const isUpperCase = (string) => {
+//       return string === string.toUpperCase();
+//   }
+
+//   const alp = 'abcdefghijklmnopqrstuvwxyz';
+//   const ALP = alp.toUpperCase();
+//   const alpLength = alp.length;
+//   k = k < alpLength ? k : k % alpLength; 
+  
+//   s = s.split('');
+//   let result = s.map((x) => {
+//       let filtro;
+//       isUpperCase(x) ? filtro = ALP : filtro = alp;
+//       filtro = filtro.split('')
+//       const index = filtro.findIndex(letra => letra === x);
+//       const r = (index + k >= alpLength) 
+//                   ? (index + k) - alpLength
+//                   : index + k;
+//       return index != -1 ? filtro[r] : x;
+//   })
+  
+//   return result.join('');
+// }
