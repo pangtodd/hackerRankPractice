@@ -5,3 +5,14 @@
 // d =2 
 // arr =[1,2,3,4,5]
 // after 2 rotations arr=[3,4,5,1,2]
+
+function rotateLeft(d, arr) {
+  let arrString=arr.join("");
+  d < arr.length ? d : d % arr.length; 
+  let stringAnswer=arrString.substring(d)+arrString.slice(0,d);
+  let answer=[];
+  for (let i = 0; i<stringAnswer.length; i++){
+      answer.push(parseInt(stringAnswer[i]));
+  }
+  return answer;   
+}
