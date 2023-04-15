@@ -7,9 +7,13 @@
 // after 2 rotations arr=[3,4,5,1,2]
 
 function rotateLeft(d, arr) {
-  const k= d < arr.length ? d : d % arr.length;
   let answer=arr.splice(k)
   const second=arr.splice(0,k);
   answer.push(...second);
   return answer
 }
+
+// alt solution:
+// function rotateLeft(d, arr) {
+//   return arr.slice(d,).concat(arr.slice (0,d));
+// }
