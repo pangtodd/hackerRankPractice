@@ -22,16 +22,28 @@ function anagram(s) {
   }
 }
 
-// test info:
+// alt solution:
 
-// aaabbb
-// ab
-// abc
-// mnop
-// xyyx
-// xaxbbbxx
-// hhpddlnnsjfoyxpciioigvjqzfbpllssuj
-// xulkowreuowzxgnhmiqekxhzistdocbnyozmnqthhpievvlj
-// dnqaurlplofnrtmh
-// aujteqimwfkjoqodgqaxbrkrwykpmuimqtgulojjwtukjiqrasqejbvfbixnchzsahpnyayutsgecwvcqngzoehrmeeqlgknnb
-// lbafwuoawkxydlfcbjjtxpzpchzrvbtievqbpedlqbktorypcjkzzkodrpvosqzxmpad
+// function anagram(s) {
+//   const map = new Map()
+//   const mid = s.length / 2
+//   const firstHalf = s.slice(0,mid)
+//   const secondHalf = s.slice(mid)
+//   let count = 0;
+  
+//   if(firstHalf.length !== secondHalf.length) {
+//       return -1
+//   }
+//   for(let char of secondHalf) {
+//       map.set(char, map.get(char) + 1 || 1)
+//   }
+//   for(let char of firstHalf) {
+//       if(map.get(char) > 0) {
+//           map.set(char, map.get(char) - 1)
+//       } else {
+//           count++
+//       }
+//   }
+  
+//   return count;
+// }
