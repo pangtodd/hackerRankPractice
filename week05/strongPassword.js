@@ -36,3 +36,34 @@ function minimumNumber(n, password) {
         return 6-password.length
     }  
 }
+
+// alt solution:
+// function minimumNumber(n, password) {
+//   let numberAdd = 0;
+//   let lowerCase   = /[a-z]/;
+//   let upperCase   = /[A-Z]/;
+//   let digit       = /[0-9]/;
+//   let characters  = /[!@#$%^&*()+-]/;
+
+//   if (!digit.test(password)) {
+//       password = password.concat('1');
+//       numberAdd++;
+//   };
+//   if (!lowerCase.test(password)) {
+//       password = password.concat('a');
+//       numberAdd++;
+//   };    
+//   if (!upperCase.test(password)) {
+//       password = password.concat('A');
+//       numberAdd++;
+//   };    
+//   if (!characters.test(password)) {
+//       password = password.concat('!');
+//       numberAdd++;
+//   };    
+//   if (password.length < 6) {
+//       let add = 6 - password.length;
+//       numberAdd += add;
+//   }
+//   return numberAdd;
+// }
