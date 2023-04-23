@@ -18,3 +18,13 @@ function maxMin(k, arr) {
   }
   return minScore
 }
+
+// alt solution:
+//   function maxMin(k, arr) {
+//   arr.sort((a,b)=>a-b)
+//   let count = arr[k-1]-arr[0]
+//   for(let i = 1; i<arr.length-k+1;i++){
+//     count=Math.min(count,arr[i+k-1]-arr[i])
+//   }
+//   return count
+// }
