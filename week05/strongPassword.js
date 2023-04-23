@@ -7,3 +7,32 @@
 // It contains at least one uppercase English character.
 // It contains at least one special character. The special characters are: !@#$%^&*()-+
 // She typed a random string of length  in the password field but wasn't sure if it was strong. Given the string she typed, can you find the minimum number of characters she must add to make her password strong?
+
+function minimumNumber(n, password) {
+    let numbers = "0123456789";
+    let lower_case = "abcdefghijklmnopqrstuvwxyz";
+    let upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let special_characters = "!@#$%^&*()-+";
+    let size = 6 - password.length;
+    let score = 4;
+    for (let i = 0; i<password.length; i++){
+        if(numbers.includes(password[i])){
+            score --;
+            numbers = "";
+        } else if (lower_case.includes(password[i])){
+            score --;
+            lower_case= "";
+        } else if (upper_case.includes(password[i])){
+            score --;
+            upper_case= ""; 
+        } else if (special_characters.includes(password[i])){
+            score --;
+            special_characters= ""; 
+        }
+    }
+    if(score+password.length>=6){
+        return score;
+    } else {
+        return 6-password.length
+    }  
+}
