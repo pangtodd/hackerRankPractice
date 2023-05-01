@@ -14,3 +14,19 @@
 // *Return the missing numbers sorted ascending.
 // *Only include a missing number once, even if it is missing multiple times.
 // *The difference between the maximum and minimum numbers in the original list is less than or equal to 100.
+
+function missingNumbers(arr, brr) {
+  let answer = [];
+  for(let i=0; i<brr.length; i++){
+      let querry = brr.shift();
+      let position = arr.findIndex(element => element === querry);
+      console.log(position)
+      console.log(arr)
+      if(position == undefined){
+          answer.push(querry)
+      } else {
+          arr.splice(position, 1)
+      }
+  }
+  return answer
+}
