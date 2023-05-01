@@ -16,17 +16,11 @@
 // *The difference between the maximum and minimum numbers in the original list is less than or equal to 100.
 
 function missingNumbers(arr, brr) {
-  let answer = [];
-  for(let i=0; i<brr.length; i++){
-      let querry = brr.shift();
-      let position = arr.findIndex(element => element === querry);
-      console.log(position)
-      console.log(arr)
-      if(position == undefined){
-          answer.push(querry)
-      } else {
-          arr.splice(position, 1)
+  for(let i=0; i<arr.length; i++){
+      let position = brr.findIndex(element => element == arr[i]);
+      if(position != undefined){
+          brr.splice(position, 1)
       }
   }
-  return answer
+  return brr.sort((a,b)=>(a-b))
 }
