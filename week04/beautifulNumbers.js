@@ -14,8 +14,27 @@ function separateNumbers(s) {
       let currentNo = parseInt(sString.slice(0,i+1));
       let chopped = sString.slice(i+1,);
       if (chopped.indexOf(currentNo+1)===0){
-          maybeArray.push(currentNo)
-      }
+          maybeArray.push(currentNo, currentNo+1)
+          sString = sString.slice(currentNo.toString().length+(currentNo+1).toString().length)
+      } 
   }
-  console.log(maybeArray)
+  if(maybeArray[0]===undefined){
+      console.log("NO")
+  } else{
+      let currentNum= maybeArray[maybeArray.length-1];
+      while(sString.length>0){
+          if(sString.indexOf(currentNum+1)===0){
+             maybeArray.push(currentNum +1);
+             sString=sString.slice((currentNum+1).toString().length);
+             currentNum=(currentNum+1);
+          } else {
+              sString=sString.slice((currentNum+1).toString().length);
+          }
+      }
+      if (maybeArray.toString().replaceAll(",","")===s.toString()){
+          console.log("YES "+maybeArray[0]);
+      } else {
+          console.log("NO");
+      }
+  }     
 }
