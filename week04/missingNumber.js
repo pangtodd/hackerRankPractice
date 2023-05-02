@@ -22,5 +22,6 @@ function missingNumbers(arr, brr) {
           brr.splice(position, 1)
       }
   }
-  return brr.sort((a,b)=>(a-b))
+  let filteredBrr = [...new Set(brr)];
+  return filteredBrr.sort((a,b)=>(a-b))
 }
