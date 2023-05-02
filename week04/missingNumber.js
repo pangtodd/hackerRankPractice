@@ -25,3 +25,13 @@ function missingNumbers(arr, brr) {
   let filteredBrr = [...new Set(brr)];
   return filteredBrr.sort((a,b)=>(a-b))
 }
+
+// alt solution:
+
+// function missingNumbers(brr, arr){
+//   brr.sort((a,b)=>a-b)
+//   for(let i = 0; i<arr.length;i++){
+//       brr.splice(brr.indexOf(arr[i]), 1)
+//   }
+//   return [...new Set(brr)];
+// }
