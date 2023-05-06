@@ -4,3 +4,12 @@
 // Insertion Sort and the simple version of Quicksort are stable, but the faster in-place version of Quicksort is not since it scrambles around elements while sorting.
 
 // Design your counting sort to be stable.
+
+function countSort(arr) {
+  console.log(arr)
+  let freq = new Array(10).fill(0);
+  for(let i=0; i<arr.length; i++){
+      freq[arr[i][0]]+=1
+  }
+  console.log(freq)
+}
