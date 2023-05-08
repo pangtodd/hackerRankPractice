@@ -6,26 +6,32 @@
 // Design your counting sort to be stable.
 
 function countSort(arr) {
+  for (let i = 0; i<arr.length/2; i++){
+      arr[i][1]="-"
+  }
   const max = Math.max(...arr.map((item) => item[0]));
 
   const freq = Array(max + 1).fill(0);
 
   for (let i = 0; i < arr.length; i++) {
-    freq[arr[i][0]]++;
+      freq[arr[i][0]]++;
   }
 
   for (let i = 1; i < freq.length; i++) {
-    freq[i] += freq[i - 1];
-  }
+      freq[i] += freq[i - 1];
+    }
 
-  
-  const answer = Array(arr.length);
-  for (let i = arr.length - 1; i >= 0; i--) {
-    const value = arr[i][0];
-    const index = freq[value] - 1;
-    answer[index] = arr[i];
-    freq[value]--;
-  }
+const answer = Array(arr.length);
+for (let i = arr.length - 1; i >= 0; i--) {
+  const value = arr[i][0];
+  const index = freq[value] - 1;
+  answer[index] = arr[i];
+  freq[value]--;
+}
 
-  return answer;
+  let stringAnswer=""
+  for (let i=0; i<answer.length; i++){
+      stringAnswer += answer[i][1] + " "
+  }
+console.log(stringAnswer);
 }
