@@ -50,3 +50,22 @@
     
     console.log(answer)
 }
+
+// alt solution:
+// function countSort(arr) {
+//   const countingArr = Array.from(Array(100), () => new Array());
+//   let middle = arr.length / 2;
+  
+//   for (let element of arr) {
+//       const [index, str] = element;
+      
+//       if (middle > 0) {
+//           countingArr[index].push('-');
+//           middle -= 1;
+//       } else {
+//           countingArr[index].push(str);
+//       }
+//   }
+  
+//   console.log(countingArr.flat().join(' '));
+// }
