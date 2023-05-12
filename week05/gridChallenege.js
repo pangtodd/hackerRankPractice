@@ -15,3 +15,32 @@ function gridChallenge(grid) {
       return "NO"
   }
 }
+
+// alt solution:
+
+// function gridChallenge(grid) {
+//     var newArray = [];
+//     for(var i in grid){
+//         //convert each string to array
+//         var temp = Array.from(grid[i]);
+//         //sort the array
+//         temp.sort();
+//         //create list of sorted arrays
+//         newArray.push(temp);
+//     }
+//     var okay = true;
+//     //check each column
+//     for(var i=0;i<grid.length;i++){
+//         for(var j=0;j<grid.length-1;j++){
+//             if(newArray[j][i]>newArray[j+1][i]){
+//                 okay = false;
+//                 break;
+//             }
+//         }
+//     }
+//     if(okay==true){
+//         return 'YES';
+//     }else{
+//         return 'NO';
+//     }
+// }
