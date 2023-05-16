@@ -8,10 +8,10 @@
 // // Perform q queries where each query consists of some integer string s. For each query, print whether or not the string is beautiful on a new line. If it is beautiful, print YES x, where x is the first number of the increasing sequence. If there are multiple such values of x, choose the smallest. Otherwise, print NO.
 
 function separateNumbers(s) {
-  let sString=s.toString();
+  let sString=BigInt(s).toString();
   let maybeArray=[];
-  for(let i=0; i<s.length; i++){
-      let currentNo = parseInt(sString.slice(0,i+1));
+  for(let i=0; i<s.length; i++) {
+      let currentNo = BigInt(sString.slice(0,i+1));
       let chopped = sString.slice(i+1,);
       if (chopped.indexOf(currentNo+1)===0){
           maybeArray.push(currentNo, currentNo+1)
@@ -38,3 +38,20 @@ function separateNumbers(s) {
       }
   }     
 }
+
+// alt solution:
+// function separateNumbers(s) {
+//     // Write your code here
+//     for (let i = 1; i < s.length; i++) {
+//         let curr = BigInt(s.slice(0, i));
+//         let temp = curr.toString();
+//         while (temp.length < s.length) {
+//             curr++;
+//             temp += curr.toString();
+//         }
+//         if (temp === s) {
+//             return console.log(`YES ${ s.slice(0, i) }`);
+//         }
+//     }
+//     return console.log("NO");
+// }
