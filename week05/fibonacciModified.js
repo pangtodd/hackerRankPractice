@@ -16,16 +16,27 @@
 // -t5 = 1 + 2squared = 5
 // -t6 = 2 + 5squared = 27
 
-function fibonacciModified(t1, t2, n) {
-  let first = t1;
-  let second = t2;
-  let third = 0;
-  for (let i = 0; i < n - 2; i++) {
-    third = first + second ** 2;
-    first = second;
-    second = third;
-  }
-  console.log(third)
-}
+// function fibonacciModified(t1, t2, n) {
+//   let first = t1;
+//   let second = t2;
+//   let third = 0;
+//   for (let i = 0; i < n - 2; i++) {
+//     third = first + second ** 2;
+//     first = second;
+//     second = third;
+//   }
+//   console.log(third)
+// }
 
+function fibonacciModified(t1, t2, n) {
+  let first = BigInt(t1);
+  let second = BigInt(t2);
+  let third = BigInt(0);
+  for (let i = 0; i<n-2; i++){
+    third = first + second **BigInt(2);
+    first =second;
+    second= third
+  }
+  console.log(third.toString())
+}
 
