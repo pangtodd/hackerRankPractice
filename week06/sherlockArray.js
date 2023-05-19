@@ -13,3 +13,15 @@
 
 
 // You will be given arrays of integers and must determine whether there is an element that meets the criterion. If there is, return YES. Otherwise, return NO.
+
+function balancedSums(arr){
+  let answer = "NO";
+  for(let i = 1; i<arr.length-1; i ++){
+    let left = arr.slice(0, 1).reduce((a,b)=> a+b);
+    let right = arr.slice(i+1,).reduce((a,b)=>a+b);
+    if (left === right){
+      answer = "YES"
+    }
+  }
+  return answer
+}
