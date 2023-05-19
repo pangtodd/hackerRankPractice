@@ -14,14 +14,27 @@
 
 // You will be given arrays of integers and must determine whether there is an element that meets the criterion. If there is, return YES. Otherwise, return NO.
 
-function balancedSums(arr){
-  let answer = "NO";
-  for(let i = 1; i<arr.length-1; i ++){
-    let left = arr.slice(0, 1).reduce((a,b)=> a+b);
-    let right = arr.slice(i+1,).reduce((a,b)=>a+b);
-    if (left === right){
-      answer = "YES"
-    }
+function balancedSums(arr) {
+  let answer = "NO"
+  let left = Number;
+  let right = Number;
+  
+  for (let i = 0; i<arr.length; i++) {
+      if (i<1){
+          left = 0;
+          right = arr.slice(i+1, ).reduce((a,b)=>a+b)
+      } else if (i >= arr.length-1) {
+          left = arr.slice(0, i).reduce((a,b)=>a+b);
+          right = 0;
+      }
+      else {
+          left = arr.slice(0, i).reduce((a,b)=>a+b);
+          right = arr.slice(i+1, ).reduce((a,b)=>a+b)
+      }
+      if(left === right){
+          answer = "YES"
+      } 
   }
-  return answer
+  return answer;
+
 }
