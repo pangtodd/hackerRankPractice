@@ -40,3 +40,15 @@ function fibonacciModified(t1, t2, n) {
   console.log(third.toString())
 }
 
+// alternate solution:
+// function fibonacciModified(t1, t2, n) {
+//   // Write your code here
+//   t1=BigInt(t1);
+//   t2=BigInt(t2);
+//   for(let i=2;i<n;i++){
+//       let temp=t2;
+//       t2=t1+(t2*t2);
+//       t1=temp;
+//   }
+//   return t2;
+// }
