@@ -15,27 +15,20 @@
 // You will be given arrays of integers and must determine whether there is an element that meets the criterion. If there is, return YES. Otherwise, return NO.
 
 function balancedSums(arr) {
-  let answer = "NO"
-  let left = 0;
-  let right = 0;
+  let answer = "NO";
+  let totalSum = BigInt(arr.reduce((a, b) => a + b, 0));
+  let left = BigInt(0);
   
-  for (let i = 0; i<arr.length; i++) {
-      if(arr.length === 1){
-          answer = "YES"
-      } else if (i<1){
-          left = BigInt(0);
-          right = BigInt(arr.slice(i+1, ).reduce((a,b)=>a+b));
-      } else if (i >= arr.length-1) {
-          left = BigInt(arr.slice(0, i).reduce((a,b)=>a+b));
-          right = BigInt(0);
-      }
-      else {
-          left = BigInt(arr.slice(0, i).reduce((a,b)=>a+b));
-          right = BigInt(arr.slice(i+1, ).reduce((a,b)=>a+b));
-      }
-      if(left === right){
-          answer = "YES"
-      } 
+  for (let i = 0; i < arr.length; i++) {
+    let right = totalSum - left - BigInt(arr[i]);
+    
+    if (left === right) {
+      answer = "YES";
+      break;
+    }
+    
+    left += BigInt(arr[i]);
   }
+  
   return answer;
 }
