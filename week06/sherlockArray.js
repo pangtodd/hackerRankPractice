@@ -32,3 +32,15 @@ function balancedSums(arr) {
   
   return answer;
 }
+
+// alt solution:
+// function balancedSums(arr) {
+//   let sumLeft = 0;
+//   let sumRigth = arr.reduce((acc, cur) => acc + cur);
+//   for(let i = 0; i < arr.length; i++) {
+//    sumLeft += arr[i - 1] || 0;
+//    sumRigth -= arr[i];
+//    if(sumRigth === sumLeft) return "YES";
+//   }
+//   return "NO"
+// }
