@@ -16,25 +16,26 @@
 
 function balancedSums(arr) {
   let answer = "NO"
-  let left = Number;
-  let right = Number;
+  let left = 0;
+  let right = 0;
   
   for (let i = 0; i<arr.length; i++) {
-      if (i<1){
-          left = 0;
-          right = arr.slice(i+1, ).reduce((a,b)=>a+b)
+      if(arr.length === 1){
+          answer = "YES"
+      } else if (i<1){
+          left = BigInt(0);
+          right = BigInt(arr.slice(i+1, ).reduce((a,b)=>a+b));
       } else if (i >= arr.length-1) {
-          left = arr.slice(0, i).reduce((a,b)=>a+b);
-          right = 0;
+          left = BigInt(arr.slice(0, i).reduce((a,b)=>a+b));
+          right = BigInt(0);
       }
       else {
-          left = arr.slice(0, i).reduce((a,b)=>a+b);
-          right = arr.slice(i+1, ).reduce((a,b)=>a+b)
+          left = BigInt(arr.slice(0, i).reduce((a,b)=>a+b));
+          right = BigInt(arr.slice(i+1, ).reduce((a,b)=>a+b));
       }
       if(left === right){
           answer = "YES"
       } 
   }
   return answer;
-
 }
