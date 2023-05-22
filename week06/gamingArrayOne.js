@@ -8,3 +8,18 @@
 // Andy and Bob play g games. Given the initial array for each game, find and print the name of the winner on a new line. If Andy wins, print ANDY; if Bob wins, print BOB.
 
 // To continue the example above, in the next move Andy will remove 3. Bob will then remove 2 and win because there are no more integers to remove.
+
+function gamingArray(arr) {
+  let turns = 0; 
+  while(arr.length>0){
+      let largest = Math.max(...arr);
+      let position = arr.indexOf(largest);
+      turns +=1;
+      arr= arr.slice(0, position)
+  }
+  if(turns%2==0){
+      return "ANDY"
+  } else {
+      return "BOB"
+  }
+}
