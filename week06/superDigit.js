@@ -22,3 +22,19 @@
 // superDigit(p)= superDigit(116)
 // 1+1+6=8
 // superDigit(p)= SuperDigit(8)
+
+function superDigit(n, k) {
+  let starter=0;
+  for(let i = 0; i<n.length; i++){
+     starter +=parseInt(n.toString()[i])
+  }
+  let superNo = starter*k;
+  while(superNo>9){
+      let temp = 0;
+      for(let i = 0; i<superNo.toString().length; i++){
+          temp +=parseInt(superNo.toString()[i])
+      }
+  superNo = temp;
+  }
+  return superNo
+}
