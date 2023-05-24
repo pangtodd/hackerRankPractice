@@ -38,3 +38,19 @@ function superDigit(n, k) {
   }
   return superNo
 }
+
+// alt soltuion:
+// function superDigit(n, k) {
+//   let numStr = `${n}`
+// if(numStr.length === 1){
+//     return n
+// }
+  
+// let num = numStr.split("").reduce((acc,el)=>acc+ el *1,0);
+// let finalNum = num *k;
+
+// let final = `${finalNum}`
+// return superDigit(final,1)
+
+
+// }
