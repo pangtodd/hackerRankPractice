@@ -7,3 +7,6 @@
 function solution(str){
   return str.split('').resverse().join('');
 }
+
+// alt solution:
+// const solution = s => [...s].reverse().join('')
