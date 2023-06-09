@@ -4,3 +4,13 @@
 // Examples
 // "This is an example!" ==> "sihT si na !elpmaxe"
 // "double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str) {
+  const eachWord = str.split(' ');
+  let answer = [];
+  for (let i = 0; i < eachWord.length; i++) {
+    console.log(eachWord[i])
+    answer.push(eachWord[i].split('').reverse().join(''))
+  }
+  return answer.join(" ")
+}
