@@ -14,3 +14,6 @@ summation = function (num) {
   }
   return answer
 }
+
+alt solution:
+const summation = n => n * (n + 1) / 2;
