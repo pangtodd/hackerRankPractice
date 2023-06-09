@@ -6,3 +6,11 @@
 
 // 2 -> 3 (1 + 2)
 // 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+
+summation = function (num) {
+	let answer = 0;
+  for(let i=0; i<num+1;i++){
+  	answer+=i;
+  }
+  return answer
+}
