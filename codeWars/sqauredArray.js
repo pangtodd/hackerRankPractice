@@ -11,3 +11,8 @@ function squareSum(numbers){
   const squared = numbers.map(number=> number*number);
   return squared.reduce((a,c)=>a+c, 0)
 }
+
+alt solution:
+function squareSum(numbers){
+  return numbers.reduce((sum,num) => sum + (num * num), 0);
+}
