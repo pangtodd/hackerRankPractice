@@ -5,3 +5,10 @@
 
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
+
+function solution(str, ending){
+  if (ending ===""){
+    return true
+  } 
+  return str.slice(ending.length*-1,)==ending? true:false
+ }
