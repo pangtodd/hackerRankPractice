@@ -6,3 +6,8 @@
 // 2 squared = 4
 // 2 sqared = 4
 // summed = 9
+
+function squareSum(numbers){
+  const squared = numbers.map(number=> number*number);
+  return squared.reduce((a,c)=>a+c, 0)
+}
