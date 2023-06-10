@@ -12,3 +12,8 @@ function solution(str, ending){
   } 
   return str.slice(ending.length*-1,)==ending? true:false
  }
+
+//  alt solution:
+//  function solution(str, ending){
+//   return str.endsWith(ending);
+// }
