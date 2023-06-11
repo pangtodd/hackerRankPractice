@@ -11,3 +11,16 @@
 
 // 1 -->  1
 // 2 --> 3 + 5 = 8
+
+function rowSumOddNumbers(n) {
+  let digitsInRow = 0;
+  let prevDigitsInRow = 0;
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    digitsInRow = prevDigitsInRow + i;
+    sum = i * (prevDigitsInRow + digitsInRow)
+    prevDigitsInRow = digitsInRow;
+  }
+  return sum
+}
+  
