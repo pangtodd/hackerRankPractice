@@ -17,3 +17,13 @@ function countSheeps(arrayOfSheep) {
   const sheep=arrayOfSheep.filter(sheep=> sheep== true);
   return sheep.length
 }
+
+// refactored version:
+// function countSheeps(arrayOfSheep) {
+//   return arrayOfSheep.filter(sheep=> sheep== true).length;
+// }
+
+// alt solution:
+// function countSheeps(arrayOfSheeps) {
+//   return arrayOfSheeps.filter(Boolean).length;
+// }
