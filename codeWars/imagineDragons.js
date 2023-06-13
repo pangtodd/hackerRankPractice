@@ -6,3 +6,6 @@
 function hero(bullets, dragons){
   return bullets>=dragons*2? true: false
 }
+
+// alt solution:
+// hero = (b, d) => d * 2 <= b;
