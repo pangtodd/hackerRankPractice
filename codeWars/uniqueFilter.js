@@ -17,3 +17,8 @@ function longest(s1, s2) {
     }
   return answer.split("").sort().join("")
 }
+
+// alt solution:
+// function longest(s1, s2){
+//   const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+// }
