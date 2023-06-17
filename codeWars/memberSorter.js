@@ -12,3 +12,11 @@
 // Example
 // input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 // output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
+
+function openOrSenior(data){
+  let answer= [];
+  for (let i=0;i<data.length;i++){
+    data[i][0]>54 && data[i][1]>7? answer.push("Senior"): answer.push("Open")
+  }
+  return answer
+}
