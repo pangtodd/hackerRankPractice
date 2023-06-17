@@ -8,3 +8,8 @@
 function digitize(n) {
   return n.toString().split("").reverse().map(entry=>parseInt(entry))
 }
+
+// alt solution:
+// function digitize(n) {
+//   return Array.from(String(n), Number).reverse();
+// }
