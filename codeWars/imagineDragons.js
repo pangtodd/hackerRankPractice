@@ -8,4 +8,4 @@ function hero(bullets, dragons){
 }
 
 // alt solution:
-// hero = (b, d) => d * 2 <= b;
+// hero = (b, d) => d * 2 <= b

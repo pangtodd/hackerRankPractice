@@ -13,7 +13,6 @@ function minimumNumber(n, password) {
     let lower_case = "abcdefghijklmnopqrstuvwxyz";
     let upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let special_characters = "!@#$%^&*()-+";
-    let size = 6 - password.length;
     let score = 4;
     for (let i = 0; i<password.length; i++){
         if(numbers.includes(password[i])){

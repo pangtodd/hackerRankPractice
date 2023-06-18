@@ -9,7 +9,7 @@ function caesarCipher(s, k) {
       key = alphabet.substring(k%26)+alphabet.slice(0,k%26)
       } 
   let answer = "";
-  for(let i=0; i<s.length; i++){
+  for(let i=0; i<s.length; i++){+
       let position = alphabet.indexOf(s[i].toLowerCase());
       if(key.includes(s[i])){
           answer = answer + key[position];          

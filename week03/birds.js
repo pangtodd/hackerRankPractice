@@ -22,7 +22,7 @@ function migratoryBirds(arr) {
   let score = 0;
   let winner =0;
   for (const num of arr) {
-       counts[num] = counts[num] ? counts[num] + 1 : 1;
+    counts[num] = counts[num] ? counts[num] + 1 : 1;
   };
   for (let i=1; i<6; i++){
       if (counts[i]> score){
