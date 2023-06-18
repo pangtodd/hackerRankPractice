@@ -3,3 +3,6 @@
 
 // Return your answer as a number.
 
+function sumMix(x){
+  return  x.map(number=>parseInt(number)).reduce((a,b)=>a+b)
+ }
