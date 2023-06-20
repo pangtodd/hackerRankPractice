@@ -24,5 +24,10 @@ function XO(str) {
   return xs===os? true: false;  
 }
 
+// alt solution:
+// function XO(str) {
+//   return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
+// }
+
 
 
