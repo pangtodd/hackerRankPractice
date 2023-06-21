@@ -5,3 +5,7 @@ function removeChar(str){
   return str.slice(1, str.length-1)
 };
 
+// alt solution:
+// function removeChar(str) {
+//   return str.slice(1, -1);
+// }
