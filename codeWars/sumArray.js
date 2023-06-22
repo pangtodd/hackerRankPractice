@@ -24,3 +24,10 @@ function getSum(a, b){
     answerArr.push(i);
   }
   return answerArr.reduce((a, b)=>a+b)
+}
+
+// alt solution:
+// function GetSum(a,b)
+// {
+//   return (Math.abs(a - b) + 1) * (a+b) / 2;
+// }
