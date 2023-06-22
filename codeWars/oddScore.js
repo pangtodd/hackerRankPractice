@@ -16,3 +16,6 @@ function findOdd(A) {
     if (result%2>0) return A[i]
   }
 }
+
+// alt solution:
+// const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
