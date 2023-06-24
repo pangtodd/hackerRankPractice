@@ -8,3 +8,7 @@
 // Note: The function accepts an integer and returns an integer.
 
 // Happy Coding!
+
+function squareDigits(num){
+  return parseInt(num.toString().split("").map(x=>parseInt(x)*parseInt(x)).join(""))
+}
