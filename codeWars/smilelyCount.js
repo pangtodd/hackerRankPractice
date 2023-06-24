@@ -35,3 +35,6 @@ function countSmileys(arr) {
   }
   return score;
 }
+
+// alt solution:
+// const countSmileys = ss => ss.reduce((a, s) => a + /^[:;][-~]?[D)]$/.test(s), 0);
