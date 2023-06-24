@@ -12,3 +12,8 @@
 function squareDigits(num){
   return parseInt(num.toString().split("").map(x=>parseInt(x)*parseInt(x)).join(""))
 }
+
+// alt solution:
+// function squareDigits(num){
+//   return +num.toString().split('').map(i => i*i).join('');
+// }
