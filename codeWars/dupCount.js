@@ -10,3 +10,17 @@
 // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text) {
+  let score = 0;
+  let modText = text.toLowerCase();
+  while (modText.length > 0) {
+    if (modText.indexOf(modText[0]) != modText.lastIndexOf(modText[0])) {
+      modText = modText.replaceAll(modText[0], "");
+      score += 1;
+    } else {
+      modText = modText.slice(1)
+    }
+  }
+  return score;
+}
