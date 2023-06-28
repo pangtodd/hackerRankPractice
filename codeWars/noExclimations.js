@@ -4,3 +4,8 @@
 function removeExclamationMarks(s) {
   return s.replaceAll("!","")
 }
+
+// alt solution:
+// function removeExclamationMarks(s) {
+//   return s.replace(/!/gi, '');
+// }
