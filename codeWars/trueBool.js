@@ -7,3 +7,8 @@
 function booleanToString(b){
   return b == true? "true": "false"
 }
+
+// alt solution:
+// function booleanToString(b){
+//   return b.toString();
+// }
