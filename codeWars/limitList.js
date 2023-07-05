@@ -9,13 +9,14 @@
 // With list [20,37,20,21] and number 1, the result would be [20,37,21].
 
 function deleteNth(arr, n) {
-	let count = 0;
-  let newArr=arr;
   for (let i = 0; i < arr.length; i++) {
-    count = newArr.filter(x => x == newArr[i]).length;
+    let count = arr.filter(x => x == arr[i]).length;
+    console.log(count)
     if (count > n) {
-			newArr.splice(newArr.lastIndexOf(newArr[i]), 1);
+			do{
+      	arr.splice(arr.lastIndexOf(arr[i]), 1);
+        count = arr.filter(x => x == arr[i]).length;
+      	}
+      	while(count>n);
     }
   }
-  return arr
-}
