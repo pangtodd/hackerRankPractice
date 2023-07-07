@@ -15,3 +15,8 @@
 function century(year) {
   return year<100? 1: parseInt((year+99).toString().slice(0,-2));
 }
+
+// alt soltuion:
+// function century(year) {
+//   return year<100? 1: parseInt((year+99).toString().slice(0,-2));
+// }
