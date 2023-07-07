@@ -17,3 +17,15 @@
 // If it is the case we will return k, if not return -1.
 
 // Note: n and p will always be given as strictly positive integers.
+
+function digPow(n, p){
+  const arr = 
+    n
+    .toString()
+    .split("")
+    .map(function(element, position){
+      return Math.pow(parseInt(element), p+position)
+    })
+    .reduce((a,b)=>a+b);
+    return arr%n===0? arr/n: -1
+}
