@@ -9,3 +9,8 @@
 function invert(array) {
   return array.map(x=> x*-1)
 }
+
+// alt solution:
+
+// const invert = array => array.map(num => -num);
+
