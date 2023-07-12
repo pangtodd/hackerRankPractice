@@ -15,3 +15,12 @@
 function findNeedle(haystack) {
   return `found the needle at position ${haystack.findIndex((e)=>e=="needle")}`
 }
+
+// alt solution:
+// function findNeedle(array) {
+//   for (var i=0; i<array.length; i++){
+//     if (array[i] === 'needle')
+//       return 'found the needle at position ' + i;
+//   }
+//     // your code here
+//   }
