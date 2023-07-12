@@ -9,3 +9,6 @@
 function cockroachSpeed(s) {
   return parseInt((s/360)*10000)
 }
+
+// alt solution:
+// const cockroachSpeed = s => Math.floor(s / 0.036);
