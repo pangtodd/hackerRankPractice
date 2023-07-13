@@ -16,3 +16,7 @@
 // #Output
 
 // The middle character(s) of the word represented as a string.`
+
+function getMiddle(s){
+  return s.length%2===0? s.slice(s.length/2-1, s.length/2+1): s.slice(s.length/2,s.length/2+1);
+}
