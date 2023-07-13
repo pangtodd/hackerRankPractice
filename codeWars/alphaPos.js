@@ -10,3 +10,18 @@
 // Example
 // alphabetPosition("The sunset sets at twelve o' clock.")
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+
+function alphabetPosition(text) {
+  const alpha= "abcdefghijklmnopqrstuvwxyz "
+  let newText=text;
+  for (let j=0; j<text.length; j++){
+  	if(alpha.includes(text[j].toLowerCase()) == false){
+    newText=newText.replaceAll(text[j], "")
+    }
+  }
+  const key = alpha.trim().split("");
+	for (let i = 0; i<key.length; i++){
+    newText = newText.toLowerCase().replaceAll(key[i], (i+1)+",")
+  }
+  return newText.replaceAll(" ", "").split(",").filter(e=> parseInt(e)>= 0).join(" ")
+}
