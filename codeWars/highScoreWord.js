@@ -10,3 +10,15 @@
 // If two words score the same, return the word that appears earliest in the original string.
 
 // All letters will be lowercase and all inputs will be valid.
+
+function high(x){
+  const alpha = " abcdefghijklmnopqrstuvwxyz";
+  let bobby = x
+  for(let i =0; i<x.length; i++){
+    if (bobby.includes(x[i])) {
+        bobby=bobby.replaceAll(x[i], alpha.indexOf(x[i])+",")
+  }
+  }
+  const words= bobby.split(0)
+  console.log(words[0].trim().split(",").map(e=>parseInt(e)).filter(e=> e > 0).reduce((a,b)=>a+b))
+}
