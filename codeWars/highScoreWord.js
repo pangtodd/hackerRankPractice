@@ -12,13 +12,26 @@
 // All letters will be lowercase and all inputs will be valid.
 
 function high(x){
-  const alpha = " abcdefghijklmnopqrstuvwxyz";
+  const alpha = "abcdefghijklmnopqrstuvwxyz ";
   let bobby = x
   for(let i =0; i<x.length; i++){
     if (bobby.includes(x[i])) {
-        bobby=bobby.replaceAll(x[i], alpha.indexOf(x[i])+",")
+        bobby=bobby.replaceAll(x[i], alpha.indexOf(x[i])+1+",")
   }
   }
-  const words= bobby.split(0)
-  console.log(words[0].trim().split(",").map(e=>parseInt(e)).filter(e=> e > 0).reduce((a,b)=>a+b))
+  const words= bobby.split(27)
+ /*  console.log( words[0].split(",").map(e=>parseInt(e)).filter(e=> e > 0).reduce((a,b)=>a+b)); */
+  let highScore= 0;
+  let highPos = 0;
+  for (let j = 0; j<words.length; j++){
+  	let jScore = words[j].split(",").map(e=>parseInt(e)).filter(e=> e > 0).reduce((a,b)=>a+b)
+    if (jScore>highScore){
+    	highScore = jScore;
+      highPos= j
+    }
+  }
+  return x.split(" ")[highPos]
 }
+
+
+
