@@ -11,11 +11,12 @@
 // Note you should only return a number, the count of divisors. The numbers between parentheses are shown only for you to see which numbers are counted in each case.
 
 function getDivisorsCnt(n){
-  let answer =0
-    for (let i = 1; i<=n; i++){
-      if (n%i==0){
-        answer+=1
-      }
+  let answer =[]
+  for (let i = 1; i<=Math.floor(Math.sqrt(n)); i++){
+    if (n%i ==0){
+      answer.push(i, (n/i))
     }
-  return answer
+  }
+  const fAnswer= [...new Set(answer)]
+  return fAnswer.length
 }
