@@ -15,3 +15,9 @@
 const stringToNumber = function(str){
   return parseInt(str)
 }
+
+// alt solution:
+// var stringToNumber = function(str){
+//   // put your code here
+//   return Number(str);
+// }
