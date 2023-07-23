@@ -22,3 +22,20 @@
 
 // http://www.catster.com/cats-101/calculate-cat-age-in-cat-years
 // http://www.slate.com/articles/news_and_politics/explainer/2009/05/a_dogs_life.html
+
+var humanYearsCatYearsDogYears = function(humanYears) {
+  let dogYears= humanYears;
+  let catYears=humanYears;
+  if(humanYears>2){
+    catYears=(humanYears-2)*4 + 24;
+    dogYears=(humanYears-2)*5 +24;
+  } else if (humanYears>1){
+    catYears =24
+    dogYears=24
+  } else {
+    catYears =15
+    dogYears=15
+  }
+  return [humanYears,catYears,dogYears];
+}
+
