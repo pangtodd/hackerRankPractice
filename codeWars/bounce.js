@@ -22,3 +22,17 @@
 // - h = 3, bounce = 1, window = 1.5, result is -1 
 
 // (Condition 2) not fulfilled).
+
+function bouncingBall(h, bounce, window) {
+  let score = -1;
+  if (bounce <= 0 || bounce >= 1) return score;
+  if (window >= h) return score;
+
+  do {
+    score += 2
+    h = h * bounce;
+    console.log(h)
+  }
+  while (h > window)
+  return score
+}
