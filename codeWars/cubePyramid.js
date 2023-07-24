@@ -72,3 +72,11 @@ function findNb(m) {
   }
 return currentVol === m? cubeTotal-1: -1
 }
+
+// alt solution:
+// var findNb = m =>
+// {
+//   var n = Math.floor((4*m)**.25);
+//   var sum = x => (x*(x+1)/2)**2;
+//   return sum(n) == m ? n : -1;
+// }
