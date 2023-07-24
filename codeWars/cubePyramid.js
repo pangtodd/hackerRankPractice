@@ -62,3 +62,13 @@
 // findNb(1071225) --> 45
 
 // findNb(91716553919377) --> -1
+
+function findNb(m) {
+  let currentVol= 0;
+  let cubeTotal=1;
+  while (currentVol<m){
+    currentVol += Math.pow(cubeTotal, 3);
+    cubeTotal += 1;      
+  }
+return currentVol === m? cubeTotal-1: -1
+}
