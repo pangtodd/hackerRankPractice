@@ -66,3 +66,20 @@
 
 // 90, 100 --> []
 // Enjoy it!!
+
+function sumDigPow(a, b) {
+  let answer = []
+  for (let i = a; i < b; i++) {
+    let temp = i.toString().split('')
+    let tempTwo = [];
+    for (let j = 0; j < temp.length; j++) {
+      tempTwo.push(Math.pow(parseInt(temp[j]), j + 1))
+    }
+    if (tempTwo.length == 1) {
+      answer.push(tempTwo[0])
+    } else if (tempTwo.reduce((a, b) => a + b) == [i]) {
+      answer.push(i)
+    }
+  }
+  return answer
+}
