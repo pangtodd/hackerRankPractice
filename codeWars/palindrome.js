@@ -3,3 +3,16 @@
 function isPalindrome(x) {
   return x.toLowerCase() == x.split('').reverse().join('').toLowerCase();
 }
+
+// alt solution:
+// function isPalindrome(line) {
+//   line = line.toString().toLowerCase();
+
+//   for (var left = 0, right = line.length - 1; left < right;) {
+//     if (line.charAt(left++) !== line.charAt(right--)) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
