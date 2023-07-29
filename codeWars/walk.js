@@ -3,3 +3,11 @@
 
 // Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
+
+function isValidWalk(walk) {
+  let score = 0;
+  if (walk.length != 10) score +=1;
+  if (walk.filter(e=> e=='n').length != walk.filter(e=>e=="s").length) score +=1
+  if (walk.filter(e=> e=='e').length != walk.filter(e=>e=="w").length) score +=1
+  return score == 0
+}
