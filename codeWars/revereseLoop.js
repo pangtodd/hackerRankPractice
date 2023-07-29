@@ -12,6 +12,6 @@ const reverseSeq = n => {
 };
 
 // alt solution:
-// const reverseSeq = length => Array.from({length}, () => length--)
+// g
 
 
