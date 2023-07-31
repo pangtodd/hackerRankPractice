@@ -7,3 +7,13 @@
 
 // Based on: http://oj.leetcode.com/problems/two-sum/
 
+function twoSum(numbers, target) {
+  let answer = [];
+  for (let i = 0; i < numbers.length; i++){
+    let pos = numbers.indexOf(target - numbers[i]);
+    if (pos != -1 && pos != i) {
+      answer.push(i, pos)
+    }
+  }
+  return [...new Set(answer)].splice(0,2)
+}
