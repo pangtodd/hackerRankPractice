@@ -10,3 +10,11 @@
 //  The function prints
 
 // 16 24
+
+function miniMaxSum(arr) {
+  const sum = arr.reduce((a,b)=>a+b);
+  const sortedArr = arr.sort((a,b)=>a-b);
+  const mini = sum - sortedArr[sortedArr.length-1];
+  const maxi = sum - sortedArr[0]
+  console.log( mini, maxi)
+}
