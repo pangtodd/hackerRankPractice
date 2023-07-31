@@ -18,3 +18,11 @@ function miniMaxSum(arr) {
   const maxi = sum - sortedArr[0]
   console.log( mini, maxi)
 }
+
+// alt solution:
+// arr.sort((a, b) => a - b);
+// let minSum = arr.slice(0, 4).reduce(
+//      (acc, value) => acc + value, 0);
+// let maxSum = arr.slice(-4).reduce(
+//     (acc, value) => acc + value, 0);
+// console.log(minSum, maxSum)
