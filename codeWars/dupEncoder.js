@@ -8,3 +8,12 @@
 // "(( @"     =>  "))((" 
 // Notes
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+function duplicateEncode(word){
+  let answer = ""
+  let lowerWord = word.toLowerCase()
+  for(let i = 0; i<word.length; i++){
+    lowerWord.indexOf(lowerWord[i]) == lowerWord.lastIndexOf(lowerWord[i])? answer +="(" : answer += ")"
+  }
+return answer
+}
