@@ -16,3 +16,6 @@ function countBy(x, n) {
   }
   return z;
 }
+
+// alt solution:
+// const countBy = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
