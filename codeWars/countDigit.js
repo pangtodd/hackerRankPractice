@@ -18,3 +18,16 @@
 // So there are 11 digits 1 for the squares of numbers between 0 and 25.
 // Note that 121 has twice the digit 1.
 
+function nbDig(n, d) {
+  let count =0;
+  let digString = d.toString();
+  const regex = new RegExp(`[^${d}]`, 'g');
+  let huge = ""
+  for(let i =0; i<=n; i++){
+    let squared = (i*i).toString();
+    if(squared.includes(digString)){
+      huge+=squared
+    }
+      }
+  return huge.replaceAll(regex,"").length
+}
