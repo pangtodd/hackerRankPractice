@@ -38,3 +38,31 @@
 // Not all paths can be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
 // if you want to translate, please ask before translating.
 
+function dirReduc(arr) {
+  const directions = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST"
+  }
+  let i = 0;
+  while (i < arr.length) {
+    console.log(arr + "+i: " + i)
+    if (arr[i + 1] == directions[arr[i]]) {
+      arr.splice(i, 2);
+    } else {
+      i++
+    }
+  }
+  i = 0;
+  while (i < arr.length) {
+    console.log(arr + "+i: " + i)
+    if (arr[i + 1] == directions[arr[i]]) {
+      arr.splice(i, 2);
+    } else {
+      i++
+    }
+  }
+
+  return arr
+}
