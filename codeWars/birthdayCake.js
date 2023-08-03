@@ -16,3 +16,17 @@
 // Returns
 
 // int: the number of candles that are tallest
+
+function birthdayCakeCandles(candles) {
+  let size =0;
+  let count = 0;
+  for (let i = 0; i<candles.length; i++){
+      if (candles[i]> size){
+          size = candles[i];
+          count = 1;
+      } else if (candles[i]==size){
+          count +=1;
+      }
+  }
+  return count
+}
