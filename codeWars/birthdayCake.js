@@ -30,3 +30,9 @@ function birthdayCakeCandles(candles) {
   }
   return count
 }
+
+// alt solution:
+// function birthdayCakeCandles(candles: number[]) : number {
+//   const maxVal = Math.max(...candles);
+//   return candles.filter(item => item === maxVal).length
+// }
