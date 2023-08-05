@@ -22,3 +22,15 @@
 
 // int: the number of chocolates Bobby can eat after taking full advantage of the promotion
 // Note: Little Bobby will always turn in his wrappers if he has enough to get a free chocolate.
+
+function chocolateFeast(n, c, m) {
+  let bar = n >= c ? Math.floor(n / c) : 0;
+  let wrapper = bar;
+  while (wrapper >= m) {
+    let bonus = Math.floor(wrapper / m);
+    bar += bonus;
+    wrapper -= bonus * m
+    wrapper += bonus
+  }
+  return bar
+}
