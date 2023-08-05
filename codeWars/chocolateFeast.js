@@ -34,3 +34,17 @@ function chocolateFeast(n, c, m) {
   }
   return bar
 }
+
+// alt solution (TS)
+// function chocolateFeast(n: number, c: number, m: number): number {
+//   // Write your code here
+//   let bars = Math.floor(n / c);
+//   let sum = bars;
+//   let wrapBars: number;
+//   do {
+//       wrapBars = Math.floor(bars / m);
+//       sum += wrapBars;
+//       bars = wrapBars + (bars % m);
+//   }while (bars >= m);
+//   return sum;
+// }
