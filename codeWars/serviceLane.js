@@ -19,3 +19,8 @@ function serviceLane(width, cases) {
   }
   return answer
 }
+
+alt solution:
+// function serviceLane(width: number[], cases: number[][]): number[] {
+//   return cases.map(([from, to]) => Math.min.apply(null, width.slice(from, to + 1)));
+// }
