@@ -10,3 +10,12 @@
 
 
 // If the entry index, i =1 and the exit, j=2 , there are two segment widths of 2 and 3 respectively. The widest vehicle that can fit through both is 2. If i=2 and j=4, the widths are  which limits vehicle width to 1 .
+
+function serviceLane(width, cases) {
+  let answer= [];
+  for(let i =0; i < cases.length; i++){
+      let range = width.slice(cases[i][0], cases[i][1]+1)
+      answer.push(Math.min(...range))
+  }
+  return answer
+}
