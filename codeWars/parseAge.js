@@ -8,3 +8,6 @@
 function getAge(inputString){
   return parseInt(inputString[0]) 
 }
+
+// alt solution:
+// const getAge = parseInt;
