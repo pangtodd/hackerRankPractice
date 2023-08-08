@@ -20,3 +20,8 @@ function strCount(str, letter){
   }
   return count
 }
+
+// alt solution:
+// function strCount(str, letter){  
+//   return str.split(letter).length-1
+// }
