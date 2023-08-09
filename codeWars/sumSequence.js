@@ -16,3 +16,11 @@
 
 // Sum of a sequence (this kata)
 // Sum of a Sequence [Hard-Core Version]
+
+const sequenceSum = (begin, end, step) => {
+  let answer = [];
+  for(let i= begin; i<=end; i+=step){
+    answer.push(i)
+  }
+  return answer.length ==0? 0: answer.reduce((a,b)=>a+b)
+};
