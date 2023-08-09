@@ -24,3 +24,13 @@ const sequenceSum = (begin, end, step) => {
   }
   return answer.length ==0? 0: answer.reduce((a,b)=>a+b)
 };
+
+// alt solution:
+// const sequenceSum = (begin, end, step) => {
+//   var sum = 0;
+//   for(var i=begin;i<=end;i+=step)
+//   {
+//     sum += i;
+//   }
+//   return sum;
+// };
