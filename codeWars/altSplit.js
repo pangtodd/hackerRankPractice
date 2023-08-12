@@ -14,3 +14,35 @@
 
 // If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
+function encrypt(text, n) {
+  if (!text || n <= 0) return text; 
+  let answer = text
+  for (let i = 0; i < n; i++) {
+    let odd = ""
+    let even = ""
+    let cycle = text? text.length: 0
+    for (let j = 0; j < cycle; j++) {
+      j % 2 == 0 ? even += answer[j] : odd += answer[j]
+    }
+    answer = odd.concat(even)
+  }
+  console.log(answer)
+  return answer
+}
+
+function decrypt(text, n) {
+  if (!text || n <= 0) return text;
+  let answer = text;
+  for (let i = 0; i < n; i++) {
+    let mid = Math.floor(answer.length / 2);
+    let odd = answer.slice(0, mid);
+    let even = answer.slice(mid, text.length);
+    let iAnswer = "";
+    for (let j = 0; j < even.length; j++) {
+      iAnswer += odd[j] ? even[j] + odd[j] : even[j];
+    }
+    answer = iAnswer;
+  }
+  console.log("decrypt answer: " + answer);
+  return answer;
+}
