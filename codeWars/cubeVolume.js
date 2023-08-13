@@ -7,3 +7,6 @@
 
 // If you can, try writing it in one line of code.
 
+function findDifference(a, b) {
+  return a.reduce((a,b)=>a*b)- b.reduce((a,b)=>a*b)
+}
