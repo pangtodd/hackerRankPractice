@@ -8,5 +8,10 @@
 // If you can, try writing it in one line of code.
 
 function findDifference(a, b) {
-  return a.reduce((a,b)=>a*b)- b.reduce((a,b)=>a*b)
+  return Math.abs(a.reduce((a,b)=>a*b)- b.reduce((a,b)=>a*b))
 }
+
+// alt solution:
+// function find_difference(a, b) {
+//   return Math.abs(a[0]*a[1]*a[2]-b[0]*b[1]*b[2]);
+// }
