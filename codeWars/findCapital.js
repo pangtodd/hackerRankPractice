@@ -5,3 +5,13 @@
 // Example (Input --> Output)
 // "CodEWaRs" --> [0,3,4,6]
 
+var capitals = function (word) {
+	const test = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  let answer=[];
+  for(let i = 0; i<word.length; i++){
+    if (test.includes(word[i])) {
+      answer.push(i)
+      }
+  }
+  return answer
+};
