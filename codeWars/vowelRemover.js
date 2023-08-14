@@ -17,3 +17,8 @@ function shortcut (string) {
   }
   return answer;
 }
+
+// alt solution:
+// function shortcut(string){
+//   return string.replace(/[aeiou]/g,'')
+// }
