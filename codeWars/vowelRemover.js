@@ -8,3 +8,12 @@
 // "HELLO"     -->  "HELLO"
 // don't worry about uppercase vowels
 // y is not considered a vowel for this kata
+
+function shortcut (string) {
+  const vowel="aeiou";
+  let answer = ""
+  for(let i=0; i<string.length; i++){
+    if (!vowel.includes(string[i])) answer +=string[i]
+  }
+  return answer;
+}
