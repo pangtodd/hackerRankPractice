@@ -25,3 +25,16 @@
 // ...that is:
 
 // "  *\n ***\n*****\n ***\n  *\n"
+
+function diamond(n){
+  if (n%2 == 0 || n < 1) return null
+  let start = []
+  for (let i =0; i<=n; i++){
+  	if (i%2 != 0){
+    start.push(`${" ".repeat((n-i)/2)}${"*".repeat(i)}\n`)
+    }
+  };
+  console.log(start[0])
+  const end = [...start].reverse().splice(1,)
+  return start.concat(end).join("")
+}
