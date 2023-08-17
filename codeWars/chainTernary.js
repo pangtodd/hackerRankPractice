@@ -50,3 +50,7 @@
 // When you have finished the work, click "Run Tests" to see if your code is working properly.
 
 // In the end, click "Submit" to submit your code and pass this kata.
+
+function saleHotdogs(n){
+  return n<5? 100*n : n<10? 95*n : 90*n
+}
