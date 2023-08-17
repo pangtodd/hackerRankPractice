@@ -17,3 +17,10 @@ function stray(numbers) {
   }
   return different.length<same.length? different[0]: same[0]
 }
+
+// alt solution:
+// function stray(numbers){
+//   for (var i in numbers){
+//      if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){return numbers[i]}
+//   }
+// }
