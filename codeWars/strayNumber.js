@@ -8,3 +8,12 @@
 // Examples
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(numbers) {
+  let same = []
+  let different = []
+  for (let i=0; i<numbers.length; i++){
+    numbers[i] == numbers[0]? same.push(numbers[i]): different.push(numbers[i]);
+  }
+  return different.length<same.length? different[0]: same[0]
+}
