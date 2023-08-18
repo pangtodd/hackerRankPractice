@@ -25,3 +25,16 @@
 // Note
 // consecutive strings : follow one after another without an 
 
+function longestConsec(strarr, k) {
+  if (k <1|| k>strarr.length) return ""
+  let winner = ""
+  let highScore = 0; 
+  for(let i =0; i<strarr.length; i++){
+    let word = strarr.slice(i,i+k).join("")
+    if(word.length>highScore){
+      highScore=word.length;
+      winner = word
+    }
+  }
+    return winner
+}
