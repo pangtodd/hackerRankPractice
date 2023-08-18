@@ -15,3 +15,9 @@
 
 // s="aaaxbbbbyyhwawiwjjjwwm"
 // printer_error(s) => "8/22"
+
+function printerError(s) {
+  const errors = "nopqrstuvwxyz"
+  const errorsArray = s.split("").filter((e)=> errors.includes(e))
+  return `${errorsArray.length}/${s.length}`
+}
