@@ -56,3 +56,14 @@
 
 // expressionsMatter(1,1,1)  ==>  return 3
 
+function expressionMatter(a, b, c) {
+  const opt1= a* (b + c) 
+  const opt2 = a* b * c 
+  const opt3= a + b * c 
+  const opt4 =(a + b) * c 
+  const opt5 = a+b+c
+  let big0 = opt1>opt2? opt1 : opt2
+  const big1 = big0<opt5? opt5 : big0
+  const big2 = opt3>opt4? opt3 : opt4
+  return big1>big2? big1 :big2
+}
