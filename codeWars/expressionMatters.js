@@ -67,3 +67,15 @@ function expressionMatter(a, b, c) {
   const big2 = opt3>opt4? opt3 : opt4
   return big1>big2? big1 :big2
 }
+
+// alt solution:
+// function expressionMatter(a, b, c) {
+// return Math.max(
+//   a + b + c,
+//   a * b * c,
+//   a * (b + c),
+//   (a + b) * c,
+//   a + b * c,
+//   a * b + c,
+// );
+// }
