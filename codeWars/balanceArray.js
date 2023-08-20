@@ -26,3 +26,18 @@
 
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
+
+function findEvenIndex(arr){
+  let position = -1
+  let sum = arr.reduce((a,b)=>a+b)
+  if (sum - arr[0] == 0) return 0
+  if (sum - arr[arr.length-1]==0) return arr.length-1
+  for (let i=1; i<arr.length-1;i++){
+    let left = arr.slice(0, i).reduce((a,b)=>a+b);
+       console.log(left)
+    let right = arr.slice(i+1,).reduce((a,b)=>a+b)
+       console.log(right)
+    if (left == right ) position = i
+  }
+  return position
+}  
