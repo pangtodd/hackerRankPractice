@@ -16,3 +16,17 @@
 // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 
 
+function titleCase(title, minorWords){
+  if (title == '') return title
+  let titleArr = title.toLowerCase().split(" ")
+  const minorWordz =" "+minorWords+" "
+  let answer = []
+  for (let i=0; i<titleArr.length; i++){
+    if (!minorWords|| !minorWordz.toLowerCase().includes(" "+titleArr[i]+" ") || i ==0){  
+        answer.push(titleArr[i][0].toUpperCase()+titleArr[i].slice(1,))
+    } else {
+      answer.push(titleArr[i])
+    }
+  }
+  return answer.join(" ")
+}
