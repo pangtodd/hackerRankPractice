@@ -16,3 +16,13 @@
 function arithmetic(a, b, operator){
   return operator == "add" ? a+b: operator =="subtract" ?a-b: operator == "multiply"? a*b :a/b 
 }
+
+// alt solution:
+// function arithmetic(a, b, op){
+//   return ({
+//     'm': (a, b) => a*b,
+//     'd': (a, b) => a/b,
+//     'a': (a, b) => a+b,
+//     's': (a, b) => a-b
+//   })[op[0]](a, b);
+// }
