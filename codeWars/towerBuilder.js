@@ -20,3 +20,14 @@
 //   "***********"
 // ]
 // Go challenge Build Tower Advanced once you have finished this :)
+
+function towerBuilder(nFloors) {
+  const length = nFloors*2 -1
+  let answer =[]
+  for (let i = 1; i<=nFloors; i++){
+    let oddy = i*2-1;
+    let spacy = " ".repeat((length-oddy)/2)
+    answer.push(spacy+"*".repeat(oddy)+spacy)
+  }
+  return answer
+}
