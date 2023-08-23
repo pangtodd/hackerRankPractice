@@ -21,3 +21,12 @@ function minValue(values){
   const uniqueValues = [...new Set(values)].sort((a,b)=>a-b);
   return +uniqueValues.join("")
 }
+
+// alt solution:
+// function minValue(values){
+//   const n = values
+//     .filter((e, i, arr) => arr.indexOf(e) === i)
+//     .sort()
+//     .join('');
+//   return Number(n);
+// }
