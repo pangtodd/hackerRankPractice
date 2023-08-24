@@ -9,3 +9,19 @@
 function solution(nums){
   return nums? nums.sort((a,b)=>a-b) : []
 }
+
+// alt solution:
+// function solution(nums){
+//   if(nums === null) {
+//     return [];
+//   }
+//   for(let i = 0; i < nums.length; i++) {
+//     if( nums[i] > nums[i + 1]) {
+//       let newNum = nums[i]
+//       nums[i] = nums[i + 1];
+//       nums[i + 1] = newNum
+//       solution(nums);
+//     }
+//   }
+//   return nums;
+// }
