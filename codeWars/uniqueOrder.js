@@ -18,3 +18,8 @@ var uniqueInOrder = function(iterable) {
   }
   return answer
 }
+
+// alt solution:
+// var uniqueInOrder=function(iterable){
+//   return [...iterable].filter((a, i) => a !== iterable[i-1])
+// }
