@@ -8,3 +8,11 @@
 // solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
 // solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
 // solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
+
+function solve(s){
+  let upperPos = 0;
+  for(let i=0; i<s.length;i++){
+    if(s[i].toUpperCase() == s[i]) upperPos+=1
+  };
+  return upperPos>s.length/2? s.toUpperCase(): s.toLowerCase()
+}
