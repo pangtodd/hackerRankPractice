@@ -9,3 +9,8 @@
 // 121 --> 144
 // 625 --> 676
 // 114 --> -1 since 114 is not a perfect square
+
+function findNextSquare(sq) {
+	const square = Math.sqrt(sq)
+  return square%1 != 0? -1 : Math.pow(square+1, 2)
+  }
