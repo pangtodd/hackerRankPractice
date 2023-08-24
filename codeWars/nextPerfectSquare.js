@@ -14,3 +14,12 @@ function findNextSquare(sq) {
 	const square = Math.sqrt(sq)
   return square%1 != 0? -1 : Math.pow(square+1, 2)
   }
+
+  // alt soltuion:
+  // function findNextSquare(sq) {
+  //   var number = Math.sqrt(sq);
+  //   if(Math.round(number) === number) {
+  //     return Math.pow(++number, 2)
+  //   }
+  //   return -1;
+  // }
