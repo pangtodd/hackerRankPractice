@@ -16,3 +16,17 @@ function DNAStrand(dna){
   let flip = dna.replaceAll("A","t").replaceAll("T","a").replaceAll("C","g").replaceAll("G","c");
   return flip.toUpperCase()
 }
+
+// alt:
+// function DNAStrand(dna) {
+//   return dna.replace(/./g, function(c) {
+//     return DNAStrand.pairs[c]
+//   })
+// }
+
+// DNAStrand.pairs = {
+//   A: 'T',
+//   T: 'A',
+//   C: 'G',
+//   G: 'C',
+// }
