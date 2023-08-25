@@ -39,3 +39,16 @@
 // productFib(800) # should return {34, 55, false}, 
 // Note:
 // You can see examples for your language in "Sample Tests".
+
+function productFib(prod){
+  let first = 0;
+  let second =1;
+  let sum = 0;
+  while (sum<prod){
+    let temp = second+first;
+    first = second;
+    second = temp;
+    sum = first*second
+  }
+  return [first, second, sum ==prod? true: false]
+}
