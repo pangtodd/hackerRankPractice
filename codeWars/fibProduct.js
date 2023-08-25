@@ -52,3 +52,10 @@ function productFib(prod){
   }
   return [first, second, sum ==prod? true: false]
 }
+
+// alt solution:
+// function productFib(prod){
+//   let [a, b] = [0, 1];
+//   while(a * b < prod) [a, b] = [b, a + b];
+//   return [a, b, a * b === prod];
+// }
