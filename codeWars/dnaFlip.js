@@ -11,3 +11,8 @@
 
 // "ATTGC" --> "TAACG"
 // "GTAT" --> "CATA"
+
+function DNAStrand(dna){
+  let flip = dna.replaceAll("A","t").replaceAll("T","a").replaceAll("C","g").replaceAll("G","c");
+  return flip.toUpperCase()
+}
