@@ -12,3 +12,28 @@
 // Examples:
 // checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
 // checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  if (enteredCode !==correctCode) return false;
+  const currentArr = currentDate.split(" ");
+  const expArr = expirationDate.split(" ");
+  const expDay = parseInt(expArr[1])<10? `0${expArr[1].replace(",","")}`: expArr[1].replace(",","");
+  const currentDay = parseInt(currentArr[1])<10? `0${currentArr[1].replace(",","")}`: currentArr[1].replace(",","")
+  const months = {
+    "January" : "01",
+    "February": "02",
+    "March": "03",
+    "April": "04",
+    "May" : "05",
+    "June": "06",
+    "July": "07",
+    "August":"08",
+    "September": "09",
+    "October": "10",
+    "November": "11",
+    "December": "12",
+  }
+  const mashedExp =`${expArr[2]}${months[expArr[0]]}${expDay}`
+  const mashedCurrent = `${currentArr[2]}${months[currentArr[0]]}${currentDay}`
+  return +mashedCurrent<=+mashedExp
+}
