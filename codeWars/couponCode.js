@@ -37,3 +37,8 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
   const mashedCurrent = `${currentArr[2]}${months[currentArr[0]]}${currentDay}`
   return +mashedCurrent<=+mashedExp
 }
+
+// alt solution:
+// function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+//   return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
+// }
