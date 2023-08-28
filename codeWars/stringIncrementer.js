@@ -25,10 +25,13 @@ function incrementString(strng){
   }
   if (endNum.length <= 0) return strng+1;
   const start = strng.slice(0, strng.length-endNum.length);
+  const endNumPlus = +endNum+1;
   const middle = endNumPlus.toString().length>=endNum.length?
   	""
     :
     "0".repeat(endNum.length - endNumPlus.toString().length)
-  const endNumPlus = +endNum+1;
   return start+middle+endNumPlus
 }
+
+// alt solution:
+// let incrementString = str => str.replace(/([0-8]|\d?9+)?$/, (e) => e ? + e + 1 : 1)
