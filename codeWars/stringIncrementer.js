@@ -16,3 +16,19 @@
 // foo099 -> foo100
 
 // Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementString(strng){
+  let endNum = "";
+  for (let i=strng.length-1; i>=0; i--){
+      let backend = strng.slice(i,)
+      if (backend >=0) endNum = backend
+  }
+  if (endNum.length <= 0) return strng+1;
+  const start = strng.slice(0, strng.length-endNum.length);
+  const middle = endNumPlus.toString().length>=endNum.length?
+  	""
+    :
+    "0".repeat(endNum.length - endNumPlus.toString().length)
+  const endNumPlus = +endNum+1;
+  return start+middle+endNumPlus
+}
