@@ -19,3 +19,6 @@ var number = function(busStops){
   }
   return Math.abs(on-off)
 }
+
+// alt solution:
+// const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
