@@ -9,3 +9,13 @@
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
 
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
+
+var number = function(busStops){
+  let off = 0;
+  let on =0;
+  for (let i = 0; i<busStops.length; i++){
+    on += busStops[i][0];
+    off += busStops[i][1];
+  }
+  return Math.abs(on-off)
+}
