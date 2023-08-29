@@ -28,3 +28,32 @@
 // Note for C
 // The two arrays have the same size (> 0) given as parameter in function comp.
 
+function comp(array1, array2){
+  let sqArr1=[]
+  let sqArr2=[]
+  while (array1.length>0){
+    let sqrtI = Math.sqrt(array1[0])
+    sqrtI%1==0? array1[0]=sqrtI : sqArr1.push(array1.shift()) 
+  }
+    const set1 = new Set(sqArr1);
+
+    while (array2.length>0){
+    let sqrtJ = Math.sqrt(array2[0])
+    sqrtJ%1==0? array2[0]=sqrtJ : sqArr2.push(array2.shift()) 
+  }
+  const set2 = new Set(sqArr2);
+
+  if (set1.size !== set2.size) {
+    return false;
+  }
+
+  let areEqual = true;
+  set1.forEach(element => {
+    if (!set2.has(element)) {
+      areEqual = false;
+    }
+  });
+
+  return areEqual;
+ 
+}
