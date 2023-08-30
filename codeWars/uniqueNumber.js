@@ -12,3 +12,12 @@
 // Find the unique string
 // Find The Unique
 
+function findUniq(arr) {
+  const uniques = [...new Set(arr)]
+  const third = arr.slice(0,3)
+  let firstScore =0;
+  for(let i=0; i<third.length; i++){
+    if(third[i]==uniques[0]) firstScore +=1
+  }
+  return firstScore>=2? uniques[1]: uniques[0]
+}
