@@ -22,3 +22,12 @@
 
 // queueTime([2,3,10], 2)
 // // should return 12
+
+function queueTime(customers, n) {
+  let lanes = new Array(n).fill(0);
+  for (let i = 0; i < customers.length; i++) {
+    let pos = lanes.indexOf(Math.min(...lanes))
+    lanes[pos] = lanes[pos] + customers[i]
+  }
+  return Math.max(...lanes)
+}
