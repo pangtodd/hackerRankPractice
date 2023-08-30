@@ -21,3 +21,9 @@ function findUniq(arr) {
   }
   return firstScore>=2? uniques[1]: uniques[0]
 }
+
+// alt solution:
+// function findUniq(arr) {
+//   arr.sort((a,b)=>a-b);
+//   return arr[0]==arr[1]?arr.pop():arr[0]
+// }
