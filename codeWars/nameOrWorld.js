@@ -9,3 +9,8 @@
 // * With `name` = "aliCE" => return "Hello, Alice!"
 // * With `name` not given 
 //   or `name` = ""        => return "Hello, World!"
+
+function hello(name) {
+  const safetyName = name? name[0].toUpperCase() + name.slice(1,).toLowerCase()+"!": "World!"
+  return 'Hello, '+ safetyName;
+}
