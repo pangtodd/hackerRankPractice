@@ -10,4 +10,15 @@
 
 // [[1,2,3],[2,4,6],[3,6,9]]
 
+multiplicationTable = function(size) {
+  let multTable=[]
+  let uno=[]
+  for(let i=1; i<=size;i++){
+    uno.push(i)
+  }
+  for(let j=0; j<uno.length; j++){
+    multTable.push(uno.map((e)=>e*uno[j]))
+  }
+  return multTable
+}
 
