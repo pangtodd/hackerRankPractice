@@ -13,3 +13,8 @@ function capitalize(s){
   answer.push(s.split("").map((e,index)=>index%2!=0?e.toUpperCase(): e.toLowerCase()).join(""))
   return answer
 };
+
+// alt solution:
+// function capitalize(s){
+//   return [0,1].map(r=>[...s].map((c,i)=>i%2===r?c.toUpperCase():c).join(''));
+// };
