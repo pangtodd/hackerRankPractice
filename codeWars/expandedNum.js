@@ -8,3 +8,12 @@
 // NOTE: All numbers will be whole numbers greater than 0.
 
 // If you liked this kata, check out part 2!!
+
+function expandedForm(num) {
+  let numArr = num.toString().split("").reverse();
+  let adjNumArr= [];
+  for (let i=0; i<numArr.length; i++){
+    if (+numArr[i]>0) adjNumArr.push(numArr[i]+"0".repeat(i))
+  }
+  return adjNumArr.reverse().join(" + ")
+}
