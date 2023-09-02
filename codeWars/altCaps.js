@@ -6,3 +6,10 @@
 // The input will be a lowercase string with no spaces.
 
 // Good luck!
+
+function capitalize(s){
+  let answer= [];
+  answer.push(s.split("").map((e,index)=>index%2==0?e.toUpperCase(): e.toLowerCase()).join(""))
+  answer.push(s.split("").map((e,index)=>index%2!=0?e.toUpperCase(): e.toLowerCase()).join(""))
+  return answer
+};
