@@ -22,3 +22,23 @@
 //         this.damagePerAttack = damagePerAttack;
 //         this.toString = function() { return this.name; }
 // }
+
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function() { return this.name; }
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+while (fighter1.health>0 && fighter2.health>0){
+if(firstAttacker == fighter1.name){
+fighter2.health -= fighter1.damagePerAttack;
+firstAttacker = fighter2.name;
+} else {
+fighter1.health -= fighter2.damagePerAttack;
+firstAttacker = fighter1.name
+} 
+} 
+return fighter2.health>fighter1.health? fighter2.name : fighter1.name
+}
