@@ -8,3 +8,7 @@
 // isIsogram "Dermatoglyphics" = true
 // isIsogram "moose" = false
 // isIsogram "aba" = false
+
+function isIsogram(str){
+  return str.length == [...new Set (str.toLowerCase().split(""))].length
+}
