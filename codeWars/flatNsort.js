@@ -14,3 +14,11 @@
 function flattenAndSort(array) {
   return array.flat().sort((a, b)=>a-b)
 }
+
+// alt solution:
+// function flattenAndSort(array) {
+//   return array
+//     .reduce((result, current) => [...result, ...current],[])
+//     .sort((a, b) => a - b)
+//     ;
+// }
