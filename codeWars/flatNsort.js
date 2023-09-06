@@ -11,3 +11,6 @@
 
 // http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javascript-work-well
 
+function flattenAndSort(array) {
+  return array.flat().sort((a, b)=>a-b)
+}
