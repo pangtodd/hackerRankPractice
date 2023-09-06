@@ -12,3 +12,8 @@
 function dutyFree(msrp, disc, hol){
   return Math.floor(hol/(msrp * disc*.01))
 }
+
+// alt solution:
+
+// const dutyFree = (normPrice, discount, hol) =>
+//   hol / (normPrice * discount / 100) ^ 0;
