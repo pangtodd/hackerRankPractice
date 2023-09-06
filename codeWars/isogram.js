@@ -12,3 +12,8 @@
 function isIsogram(str){
   return str.length == [...new Set (str.toLowerCase().split(""))].length
 }
+
+// alt solution:
+// function isIsogram(str){
+// 	return new Set(str.toUpperCase()).size == str.length;
+// }
