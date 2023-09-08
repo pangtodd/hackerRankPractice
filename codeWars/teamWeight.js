@@ -22,3 +22,6 @@ function rowWeights(array){
     }
   return [teamUno, teamDos]
 }
+
+// alt solution:
+// rowWeights=arr=>arr.reduce((a,b,i)=>(a[i%2]+=b,a),[0,0])
