@@ -17,3 +17,10 @@
 
 // Note: newlines should be added between rows, but there should be no trailing newline at the end. If you're unsure about the format, look at the sample tests.
 
+function multiTable(number) {
+  let answer = [];
+  for(let i=1; i<11; i++){
+    answer.push(i+ " * "+ number +" = "+ i*number)
+  }
+  return answer.join("\n")
+}
