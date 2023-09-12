@@ -12,3 +12,12 @@
 // checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]) → 7
 // checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) → 16
 // checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
+
+function checkExam(array1, array2) {
+  let score = 0;
+  for(let i=0; i<array1.length; i++){
+    array2[i] == ""? score += 0:
+    array1[i] === array2[i]? score +=4: score -=1
+  }
+  return score<0? 0: score
+}
