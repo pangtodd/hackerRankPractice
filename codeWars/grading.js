@@ -21,3 +21,9 @@ function checkExam(array1, array2) {
   }
   return score<0? 0: score
 }
+
+// alt solution:
+// function checkExam(array1, array2) {
+//   const arr = array2.map((el,i)=> array1[i] === el ? 4 : el === '' ? 0 : -1)
+//   return arr.reduce((a,b)=> a+b, 0) > 0 ? arr.reduce((a,b)=> a+b, 0) : 0
+// }
