@@ -18,3 +18,7 @@
 //  4  =>  true
 // 25  =>  true
 // 26  =>  false
+
+var isSquare = function(n){
+  return Math.floor(Math.sqrt(n))==Math.sqrt(n)
+}
