@@ -22,3 +22,8 @@
 var isSquare = function(n){
   return Math.floor(Math.sqrt(n))==Math.sqrt(n)
 }
+
+// alt solution:
+// function isSquare(n) {
+//   return Math.sqrt(n) % 1 === 0;
+// }
