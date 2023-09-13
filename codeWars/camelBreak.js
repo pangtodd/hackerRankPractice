@@ -10,3 +10,7 @@
 function solution(string) {
   return string.split(/(?=[A-Z])/).join(" ")
 }
+
+// alt solution:
+// const solution = string => string.replace(/[A-Z]/g, ' $&');
+
