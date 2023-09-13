@@ -10,3 +10,11 @@
 // 1050 -> 105
 // -1050 -> -105
 // Zero alone is fine, don't worry about it. Poor guy anyway
+
+function noBoringZeros(n) {
+  let stringArr = n.toString().split("");
+  while (stringArr[stringArr.length-1]=="0"){
+    let oops = stringArr.pop()
+  }
+  return +stringArr.join("")
+}
