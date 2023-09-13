@@ -17,3 +17,6 @@ function reverseLetter(str) {
   const alpha= "abcdefghijklmnopqurstuvwxyz"
   return str.split("").filter((e)=>alpha.includes(e)).reverse().join("") 
 }
+
+// alt solution:
+// reverseLetter=(s)=>s.replace(/[^a-z]/gi,'').split('').reverse().join('');
