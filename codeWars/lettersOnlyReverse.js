@@ -12,3 +12,8 @@
 // A string consists of lowercase latin letters, digits and symbols.
 
 // [output] a string
+
+function reverseLetter(str) {
+  const alpha= "abcdefghijklmnopqurstuvwxyz"
+  return str.split("").filter((e)=>alpha.includes(e)).reverse().join("") 
+}
