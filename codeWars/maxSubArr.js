@@ -6,3 +6,14 @@
 // Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.
 
 // Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
+
+var maxSequence = function(arr) {
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      sum = arr.slice(i, j + 1).length > 0 ? arr.slice(i, j + 1).reduce((a, b) => a + b) : 0;
+      if (sum > max) max = sum
+    }
+  }
+  return max
+}
