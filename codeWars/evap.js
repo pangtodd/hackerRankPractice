@@ -9,3 +9,13 @@
 // evaporator(10, 10, 5) -> 29
 // Note:
 // Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
+
+function evaporator(content, evap_per_day, threshold){ 
+  let worthless = content - (content * (1-threshold*.01)); 
+  let score = 0;
+  while (content>worthless){
+    score +=1
+    content =  content *(1-evap_per_day*.01)
+  }
+  return score
+}
