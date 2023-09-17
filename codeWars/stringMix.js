@@ -85,3 +85,34 @@ function mix(s1, s2) {
                   .filter((e)=>e.length>3)
                   .sort(tripleSort)
  return rawArray.join("/")
+}
+
+// alt solution:
+// const mix = (s1, s2) =>
+//   'abcdefghijklmnopqrstuvwxyz'
+//     .split('')
+//     .map(char => {
+//       const s1Count = s1.split('').filter(x => x === char).length;
+//       const s2Count = s2.split('').filter(x => x === char).length;
+//       const count = Math.max(s1Count, s2Count);
+//       const string = char.repeat(count);
+//       let source = count > s1Count ? '2' : '1';
+//       if (s1Count === s2Count) source = '=';
+
+//       return {
+//         char,
+//         count,
+//         source,
+//         string,
+//       };
+//     })
+//     .filter(x => x.count > 1)
+//     .sort(
+//       (objectA, objectB) =>
+//         objectB.count - objectA.count ||
+//         (objectA.source + objectA.char > objectB.source + objectB.char
+//           ? 1
+//           : -1),
+//     )
+//     .map(c => `${c.source}:${c.string}`)
+//     .join('/');
