@@ -37,3 +37,51 @@
 // s1 = "mmmmm m nnnnn y&friend&Paul has heavy hats! &"
 // s2 = "my frie n d Joh n has ma n y ma n y frie n ds n&"
 // mix(s1, s2) --> "1:mmmmmm/E:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/E:ee/E:ss"
+
+function tripleSort(a, b) {
+  if (a.length > b.length) {
+    return -1;
+  } else if (a.length < b.length) {
+    return 1;
+  }
+  if (a[0] < b[0]) {
+    return -1;
+  } else if (a[0] > b[0]) {
+    return 1;
+  }
+  return a[2].localeCompare(b[2]);
+}
+
+
+function mix(s1, s2) {
+  const bigger = s1.length>s2.length? s1.length:s2.length
+  const reggie = /[a-z]/
+  let count1= {}
+  let count2={}
+  for(let i =0; i<bigger; i++){
+    if(reggie.test(s1[i]) && s1[i]!=undefined){
+        count1[s1[i]]? count1[s1[i]]+=s1[i]:count1[s1[i]]="1:"+[s1[i]]
+    }
+    if(reggie.test(s2[i]) && s2[i]!=undefined){
+    count2[s2[i]]? count2[s2[i]]+=s2[i]: count2[s2[i]]="2:"+[s2[i]]
+    }
+  }
+  const key1 = Object.keys(count1)
+  const key2 = Object.keys(count2)
+  for(let i = 0; i<key1.length;i++){
+    if(key2.includes(key1[i])){
+      if(count1[key1[i]].length==count2[key1[i]].length){
+        count1[key1[i]]= count1[key1[i]].replace("1","=");
+        delete count2[key1[i]]
+      } else if (count1[key1[i]].length>count2[key1[i]].length){
+       delete count2[key1[i]] 
+       } else {
+       delete count1[key1[i]]
+        }
+       }
+  }
+  const rawArray= Object.values(count1)
+                  .concat(Object.values(count2))
+                  .filter((e)=>e.length>3)
+                  .sort(tripleSort)
+ return rawArray.join("/")
