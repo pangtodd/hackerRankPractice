@@ -24,3 +24,18 @@
 // Tortoises don't care about fractions of seconds
 // Think of calculation by hand using only integers (in your code use or simulate integer division)
 // or Google: "convert decimal time to hours minutes seconds"
+
+function race(v1, v2, g) {
+  let aPlace = g;
+  let bPlace =0;
+  let seconds= 0;
+  while (bPlace<aPlace){
+    seconds +=1;
+    aPlace += v1/60/60;
+    bPlace += v2/60/60;
+  }
+  let hours = seconds>3600? Math.floor(seconds/3600): 0;
+  let minutes = seconds >3600? Math.floor(seconds%3600/60) : Math.floor(seconds/60)
+  let adjSeconds = seconds-(hours*3600)- (minutes*60) -1
+  return [hours, minutes, adjSeconds]
+  }
