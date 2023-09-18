@@ -40,10 +40,24 @@
 //   return [hours, minutes, adjSeconds]
 //   }
 
+// function race(v1, v2, g) {
+//   let time = g/(v2-v1)
+//   let hours = Math.floor(time)
+//   let minutes = Math.floor((time%1)*60)
+//   let seconds =Math.floor((time%1)*60%1*60)
+//   return [hours, minutes, seconds]
+//   }
+
 function race(v1, v2, g) {
-  let time = g/(v2-v1)
-  let hours = Math.floor(time)
+  if (v1>v2) return null
+  const time = g / (v2 - v1);
+  const hours = Math.floor(time);
   let minutes = Math.floor((time%1)*60)
-  let seconds =Math.floor((time%1)*60%1*60)
-  return [hours, minutes, seconds]
+  let seconds = Math.floor((time - hours - minutes / 60) * 3600)
+  console.log(minutes)
+  if( (time - hours - minutes / 60) * 3600%1>.98) seconds+=1
+  if(seconds>59){
+    seconds = seconds %60;
+    minutes +=1
   }
+  return [hours, minutes, seconds]
