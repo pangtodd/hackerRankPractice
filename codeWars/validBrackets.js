@@ -37,24 +37,42 @@
 //     1 <= s.length <= 104
 //     s consists of parentheses only '()[]{}'.
 
+// var isValid = function(s) {
+//   if (s.length%2!=0)return false;
+//   const pair ={
+//       "(":")",
+//       "[":"]",
+//       "{":"}"
+//   }
+//   let modS= s
+//   for(let i=0;i<s.length;i++){
+//       console.log("Answer Pre:" +modS)
+//       console.log(modS.lastIndexOf(pair[s[i]]))
+//       let match = modS.lastIndexOf(pair[s[i]]);
+//       if (match>-1){
+//          modS = modS.slice(1,match)+ modS.slice(match+1)
+//          console.log("Answer Post: "+modS)
+//       }
+//   }
+//   return modS.length == 0
+// };
+
 var isValid = function(s) {
-  if (s.length%2!=0)return false;
-  const pair ={
-      "(":")",
-      "[":"]",
-      "{":"}"
+  if (s.length % 2 != 0) return false;
+	while (s.includes("()") || s.includes("[]") || s.includes("{}")){
+  	s = s.replaceAll("{}","")
+    s = s.replaceAll("[]", "")
+    s = s.replaceAll("()", "")
   }
-  let modS= s
-  for(let i=0;i<s.length;i++){
-      console.log("Answer Pre:" +modS)
-      console.log(modS.lastIndexOf(pair[s[i]]))
-      let match = modS.lastIndexOf(pair[s[i]]);
-      if (match>-1){
-         modS = modS.slice(1,match)+ modS.slice(match+1)
-         console.log("Answer Post: "+modS)
-      }
-  }
-  return modS.length == 0
+  return s.length==0
 };
 
-console.log(isValid("()[]{}"))
+// var isValid = function(s) {
+//   if (s.length % 2 !== 0) return false;
+//   const pairRegex = /\(\)|\[\]|\{\}/g;
+//   while (s.match(pairRegex)) {
+//     s = s.replace(pairRegex, "");
+//   }
+//   return s.length === 0;
+// };
+
