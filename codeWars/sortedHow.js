@@ -20,3 +20,9 @@ function isSortedAndHow(array) {
   if(asc.length>0 && desc.length>0) return "no"
   return desc.length>0?"yes, ascending":"yes, descending"
 }
+
+// alt solution:
+// function isSortedAndHow(arr) {
+//   return arr.every((x,i)=>i==0||arr[i]>=arr[i-1])?'yes, ascending':
+//          arr.every((x,i)=>i==0||arr[i]<=arr[i-1])?'yes, descending':'no'
+// }
