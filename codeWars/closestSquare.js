@@ -10,3 +10,8 @@
 function nearestSq(n){
   return Math.pow(Math.round(Math.sqrt(n)), 2)
 }
+
+// alt solution:
+// function nearestSq(n){
+//   return Math.round(n**0.5)**2
+// }
