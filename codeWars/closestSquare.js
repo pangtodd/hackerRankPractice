@@ -6,3 +6,7 @@
 // If the n is already the perfect square (e.g. n = 144, n = 81, etc.), you need to just return n.
 
 // Good luck :)
+
+function nearestSq(n){
+  return Math.pow(Math.round(Math.sqrt(n)), 2)
+}
