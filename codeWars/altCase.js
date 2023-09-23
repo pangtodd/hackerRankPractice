@@ -10,3 +10,11 @@
 // "1a2b3c4d5e".toAlternatingCase()  === "1A2B3C4D5E"
 // "String.prototype.toAlternatingCase".toAlternatingCase() === "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
 // As usual, your function/method should be pure, i.e. it should not mutate the original string.
+
+String.prototype.toAlternatingCase = function () {
+  let answer ="";
+  for(let i=0; i<this.length; i++){
+    answer+= this[i]==this[i].toLowerCase()? this[i].toUpperCase() : this[i].toLowerCase();
+  }
+  return answer
+}
