@@ -18,3 +18,8 @@ String.prototype.toAlternatingCase = function () {
   }
   return answer
 }
+
+// alt solution:
+// String.prototype.toAlternatingCase = function () {
+//   return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+// }
