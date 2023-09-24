@@ -6,3 +6,16 @@
 function noOdds( values ){
   return values.filter((e)=>e%2==0)
 }
+
+// alt solution:
+// function noOdds( values ){
+//   // Return all non-odd values
+//   var goodies = [];
+//   for(var i=0; i<values.length;i++){
+//       if(values[i]%2 == 0){
+//         goodies.push(values[i]);
+//       }
+//   }
+  
+//   return goodies;
+// }
