@@ -16,3 +16,6 @@ function remove (string) {
   }
   return string
 }
+
+// alt solution:
+// const remove = s => s.replace(/!+$/, '');
