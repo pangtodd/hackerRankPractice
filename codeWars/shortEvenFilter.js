@@ -11,3 +11,6 @@ function evenNumbers(array, number) {
   let evens = array.filter((e)=>e%2==0)
   return evens.slice(evens.length-number,)
 }
+
+// alt solution:
+// const evenNumbers = (array, number) => array.filter(item => item % 2 === 0).slice(-number);
