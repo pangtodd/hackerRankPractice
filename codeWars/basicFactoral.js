@@ -11,3 +11,6 @@ function factorial(n){
     }
     return answer
   }
+
+  // alt solution:
+  // const factorial = n => n ? factorial(n - 1) * n : 1;
