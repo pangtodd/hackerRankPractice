@@ -9,3 +9,6 @@
 var greet = function(name) {
   return "Hello "+ name[0].toUpperCase()+name.slice(1,).toLowerCase()+"!"
  };
+
+//  alt solution:
+//  var greet = (name) => `Hello ${name[0].toUpperCase() + name.substring(1).toLowerCase()}!`
