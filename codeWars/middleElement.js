@@ -12,3 +12,11 @@
 
 // gimme([5, 10, 14]) => 1
 // 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+function gimme (triplet) {
+  let sorted = [...triplet].sort((a,b)=>a-b)
+  return triplet.indexOf(sorted[1])
+//   const biggie = Math.max(...triplet)
+//   const smalls = Math.min(...triplet)
+//   return triplet.findIndex((e)=> e<biggie && e>smalls)
+}
