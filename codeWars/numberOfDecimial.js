@@ -6,3 +6,8 @@
 function digits(n) {
   return n.toString().length
 }
+
+// alt solution:
+// function digits(n) {
+//   return `${n}`.length;
+// }
