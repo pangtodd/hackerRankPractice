@@ -25,3 +25,21 @@
 // alphabetWar("zdqmwpbs"); //=> Let's fight again!
 // alphabetWar("zzzzs");    //=> Right side wins!
 // alphabetWar("wwwwwwz");  //=> Left side wins!
+
+console.log(fight)
+const points = {
+  "w":4,
+  "p":3,
+  "b":2,
+  "s":1,
+  "m":-4,
+  "q":-3,
+  "d":-2,
+  "z":-1
+}
+let score =0
+for(let i=0;i<fight.length; i++){
+ score += points[fight[i]]? points[fight[i]]:0
+}
+return score == 0 ? "Let's fight again!" : score>0? "Left side wins!": "Right side wins!"
+}
