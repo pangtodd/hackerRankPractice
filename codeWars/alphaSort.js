@@ -12,3 +12,8 @@
 function sortGiftCode(code){
   return code.split("").sort().join("")
 }
+
+// alt solution:
+// function sortGiftCode(code){
+//   return [...code].sort().join``
+// }
