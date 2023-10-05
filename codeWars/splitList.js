@@ -20,3 +20,10 @@
 // a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 // "(az, toto picaro zone kiwi)(az toto, picaro zone kiwi)(az toto picaro, zone kiwi)(az toto picaro zone, kiwi)"
 
+function partlist(arr) {
+  let answer = []
+    for(let i=1; i<arr.length; i++){
+      answer.push([arr.slice(0,i).join(" "), arr.slice(i,).join(" ")])
+    }
+  return answer
+}
